@@ -48,7 +48,7 @@ const Index = () => {
             </div>
           </div>
           <p className="text-gray-300 text-lg md:text-xl leading-relaxed font-light">
-            I find founders who build where capital intensity meets technology risk—the uncomfortable beginning points that most people systematically avoid. Regulatory complexity isn't a bug, it's the feature that builds monopolies.
+            I find founders who build where capital intensity meets technology risk—the uncomfortable beginning points that most people systematically avoid. Regulatory complexity isn't a bug, it's the feature that builds monopolies. My interests span finding outlier individuals, harnessing the systematic forces that create breakthrough companies, and occasionally backing both with my own capital.
           </p>
         </header>
 
@@ -56,10 +56,10 @@ const Index = () => {
         <section className="mb-16">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-            <h2 className="text-xl font-normal tracking-wide text-white">funding and building</h2>
+            <h2 className="text-xl font-normal tracking-wide text-white">finding, funding and building</h2>
           </div>
           <p className="text-gray-300 mb-8 text-base leading-relaxed">
-            Ventures where capital intensity, technological risk and regulatory hurdles creates natural monopolies:
+            I find exceptional individuals and breakthrough opportunities in domains where capital intensity, technological risk, and regulatory complexity create natural monopolies:
           </p>
           
           <div className="space-y-8 text-gray-300">
@@ -78,7 +78,7 @@ const Index = () => {
                 <div className="w-1.5 h-1.5 bg-gray-500 rounded-full mt-2 group-hover:bg-blue-400 transition-colors duration-300"></div>
                 <div>
                   <h3 className="font-medium text-white mb-2 text-lg">Novel Interfaces</h3>
-                  <p className="text-sm text-gray-400 font-light">Connecting Biological and Artificial Systems</p>
+                  <p className="text-sm text-gray-400 font-light">minds that bridge Biological and Artificial Systems</p>
                 </div>
               </div>
             </div>
@@ -108,11 +108,12 @@ const Index = () => {
             <h2 className="text-xl font-normal tracking-wide text-white">what's on my mind</h2>
           </div>
           <p className="text-gray-300 mb-8 text-base leading-relaxed">
-            How breakthrough adoption follows historical patterns, why institutional decision-making mirrors economic cycles, and the systemic forces that make certain technologies inevitable:
+            How breakthrough adoption follows historical patterns, why exceptional individuals are drawn to certain domains, how innovation spreads despite entrenched systems, and the systematic forces that create both outlier founders and generation-defining companies:
           </p>
           
           <div className="grid gap-3">
             {[
+              'identifying outlier talent',
               'frameworks for monopoly formation',
               'institutional deployment patterns',
               'cognitive biases in adoption cycles',
@@ -135,7 +136,7 @@ const Index = () => {
           </div>
           <div className="bg-gray-900/30 backdrop-blur-sm p-6 rounded-lg border border-gray-800/50">
             <p className="text-gray-300 leading-relaxed text-base font-light">
-              Cambridge dropout. Credit Suisse Scholar. Created my own degree combining law, art history, philosophy and science. Started a company at 19 at Cambridge, raised pre-seed from professors then left to build, learned that API restrictions kill companies faster than bad product-market fit. Now I help founders navigate the institutional machinery that actually controls capital deployment.
+              Cambridge dropout. Credit Suisse Scholar. Created my own degree combining law, art history, philosophy and science. Started a company at 19 at Cambridge, raised pre-seed from professors then left to build, learned that regulatory restrictions kill companies faster than bad product-market fit. Now I identify exceptional individuals and help them navigate the machinery that constrains European innovation.
             </p>
           </div>
         </section>
