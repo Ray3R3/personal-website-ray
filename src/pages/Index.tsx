@@ -61,6 +61,42 @@ const Index = () => {
           </p>
         </header>
 
+        {/* Previously Section */}
+        <section className="mb-16">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
+            <h2 className="text-xl font-normal tracking-wide text-white">previously</h2>
+          </div>
+          <div className="space-y-4 text-gray-300">
+            <div className="group">
+              <div className="flex items-start gap-4">
+                <div className="w-1.5 h-1.5 bg-gray-500 rounded-full mt-2 group-hover:bg-orange-400 transition-colors duration-300"></div>
+                <div>
+                  <p className="text-sm font-light">Emerging technology investments at <span className="text-white font-medium">Auctor</span></p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="group">
+              <div className="flex items-start gap-4">
+                <div className="w-1.5 h-1.5 bg-gray-500 rounded-full mt-2 group-hover:bg-orange-400 transition-colors duration-300"></div>
+                <div>
+                  <p className="text-sm font-light">Defense private equity at <span className="text-white font-medium">Stellex</span></p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="group">
+              <div className="flex items-start gap-4">
+                <div className="w-1.5 h-1.5 bg-gray-500 rounded-full mt-2 group-hover:bg-orange-400 transition-colors duration-300"></div>
+                <div>
+                  <p className="text-sm font-light">Technology research at <span className="text-white font-medium">Credit Suisse</span> (top 0.5% globally in their global challenge). Credit Suisse Scholar.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Funding and Building Section */}
         <section className="mb-16">
           <div className="flex items-center gap-3 mb-6">
@@ -137,39 +173,25 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Previously Section */}
+        {/* When Not Thinking About Monopolies Section */}
         <section className="mb-16">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
-            <h2 className="text-xl font-normal tracking-wide text-white">previously</h2>
+            <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+            <h2 className="text-xl font-normal tracking-wide text-white">when not thinking about monopolies</h2>
           </div>
-          <div className="space-y-4 text-gray-300">
-            <div className="group">
-              <div className="flex items-start gap-4">
-                <div className="w-1.5 h-1.5 bg-gray-500 rounded-full mt-2 group-hover:bg-orange-400 transition-colors duration-300"></div>
-                <div>
-                  <p className="text-sm font-light">Emerging technology investments at <span className="text-white font-medium">Auctor</span></p>
-                </div>
+          
+          <div className="grid gap-3">
+            {[
+              'Tracing how the Medici patronage system prefigured today\'s VC model',
+              'Arguing that Rothko\'s color field paintings are just systematic studies in visual cognition',
+              'Reading sci-fi that predicted today\'s regulatory battles (Asimov\'s Foundation → EU AI Act)',
+              'Wondering why people think institutional power structures are "new" when they follow 500-year-old patterns'
+            ].map((item, index) => (
+              <div key={index} className="flex items-center gap-3 group hover:translate-x-2 transition-transform duration-200">
+                <div className="w-1 h-1 bg-gray-600 rounded-full group-hover:bg-emerald-400 transition-colors duration-200"></div>
+                <span className="text-gray-300 text-sm font-light">{item}</span>
               </div>
-            </div>
-            
-            <div className="group">
-              <div className="flex items-start gap-4">
-                <div className="w-1.5 h-1.5 bg-gray-500 rounded-full mt-2 group-hover:bg-orange-400 transition-colors duration-300"></div>
-                <div>
-                  <p className="text-sm font-light">Defense private equity at <span className="text-white font-medium">Stellex</span></p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="group">
-              <div className="flex items-start gap-4">
-                <div className="w-1.5 h-1.5 bg-gray-500 rounded-full mt-2 group-hover:bg-orange-400 transition-colors duration-300"></div>
-                <div>
-                  <p className="text-sm font-light">Technology research at <span className="text-white font-medium">Credit Suisse</span> (top 0.5% globally in their global challenge). Credit Suisse Scholar.</p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </section>
 
