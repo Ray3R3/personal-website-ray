@@ -90,7 +90,7 @@ const Index = () => {
               <div className="flex items-start gap-4">
                 <div className="w-1.5 h-1.5 bg-gray-500 rounded-full mt-2 group-hover:bg-orange-400 transition-colors duration-300"></div>
                 <div>
-                  <p className="text-sm font-light">Technology research at <a href="https://www.ubs.com/ch/en/microsites/ubs-acquisition-of-credit-suisse.html" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:text-orange-400 transition-colors duration-200">Credit Suisse</a> (top 0.5% globally in their global challenge)</p>
+                  <p className="text-sm font-light">Technology research at <a href="https://www.ubs.com/ch/en/microsites/ubs-acquisition-of-credit-suisse.html" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:text-orange-400 transition-colors duration-200">Credit Suisse</a> (top 0.5% globally in their coding challenge)</p>
                 </div>
               </div>
             </div>
