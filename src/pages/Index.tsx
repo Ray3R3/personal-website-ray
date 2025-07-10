@@ -19,7 +19,7 @@ const Index = () => {
       </div>
 
       {/* New uploaded background image - smaller and centered */}
-      <div className="absolute inset-0 opacity-[0.08] pointer-events-none flex items-center justify-center">
+      <div className="absolute inset-0 opacity-[0.05] pointer-events-none flex items-center justify-center">
         <img 
           src="/lovable-uploads/0b1ff97e-2062-4113-883f-01359307aedb.png" 
           alt="" 
@@ -56,7 +56,7 @@ const Index = () => {
               </p>
             </div>
           </div>
-          <p className="text-gray-300 text-lg md:text-xl leading-relaxed font-light">
+          <p className="text-gray-300 text-base md:text-lg leading-relaxed font-light">
             I find founders who build where capital intensity meets technology risk—the uncomfortable beginning points that most people systematically avoid. Regulatory complexity isn't a bug, it's the feature that builds monopolies.<br /><br />My interests span finding outlier individuals, harnessing the systematic forces that create breakthrough companies, and occasionally backing both with my own capital.
           </p>
         </header>
@@ -134,6 +134,42 @@ const Index = () => {
                 <span className="text-gray-300 text-sm font-light">{item}</span>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Previously Section */}
+        <section className="mb-16">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
+            <h2 className="text-xl font-normal tracking-wide text-white">previously</h2>
+          </div>
+          <div className="space-y-4 text-gray-300">
+            <div className="group">
+              <div className="flex items-start gap-4">
+                <div className="w-1.5 h-1.5 bg-gray-500 rounded-full mt-2 group-hover:bg-orange-400 transition-colors duration-300"></div>
+                <div>
+                  <p className="text-sm font-light">Emerging technology investments at <span className="text-white font-medium">Auctor</span></p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="group">
+              <div className="flex items-start gap-4">
+                <div className="w-1.5 h-1.5 bg-gray-500 rounded-full mt-2 group-hover:bg-orange-400 transition-colors duration-300"></div>
+                <div>
+                  <p className="text-sm font-light">Defense private equity at <span className="text-white font-medium">Stellex</span></p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="group">
+              <div className="flex items-start gap-4">
+                <div className="w-1.5 h-1.5 bg-gray-500 rounded-full mt-2 group-hover:bg-orange-400 transition-colors duration-300"></div>
+                <div>
+                  <p className="text-sm font-light">Technology research at <span className="text-white font-medium">Credit Suisse</span> (top 0.5% globally in their global challenge). Credit Suisse Scholar.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
