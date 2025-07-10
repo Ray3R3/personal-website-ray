@@ -1,5 +1,15 @@
 
+import { useEffect, useState } from 'react';
+
 const Index = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-gray-100 font-satoshi relative overflow-hidden">
       {/* Subtle background pattern */}
@@ -7,15 +17,35 @@ const Index = () => {
         <div className="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
         <div className="absolute bottom-40 right-20 w-96 h-96 bg-blue-400 rounded-full blur-3xl"></div>
       </div>
+
+      {/* Classical bust background with parallax effect */}
+      <div 
+        className="absolute right-0 top-0 w-96 h-screen opacity-[0.03] pointer-events-none"
+        style={{
+          transform: `translateY(${scrollY * 0.3}px)`,
+          transition: 'transform 0.1s ease-out'
+        }}
+      >
+        <img 
+          src="/lovable-uploads/6f7e419a-cada-4358-9f77-78a2da5626b4.png" 
+          alt="" 
+          className="w-full h-full object-contain object-center"
+        />
+      </div>
       
       <div className="max-w-2xl mx-auto px-6 py-16 md:py-24 relative z-10">
         {/* Header */}
         <header className="mb-16">
           <div className="flex items-center gap-3 mb-8">
             <div className="w-1 h-12 bg-gradient-to-b from-blue-400 to-purple-500 rounded-full"></div>
-            <h1 className="text-3xl md:text-4xl font-light tracking-tight text-white">
-              Ray Erewunmi
-            </h1>
+            <div>
+              <h1 className="text-3xl md:text-4xl font-light tracking-tight text-white mb-2">
+                Ray Erewunmi
+              </h1>
+              <p className="text-gray-400 text-sm font-light tracking-wider uppercase">
+                Builder | Philosopher | Investor
+              </p>
+            </div>
           </div>
           <p className="text-gray-300 text-lg md:text-xl leading-relaxed font-light">
             I find founders who build where capital intensity meets technology risk—the uncomfortable beginning points that most people systematically avoid. Regulatory complexity isn't a bug, it's the feature that builds monopolies.
