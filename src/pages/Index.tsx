@@ -26,10 +26,10 @@ const Index = () => {
         />
       </div>
 
-      {/* New classical bust background image */}
-      <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 opacity-[0.03] pointer-events-none">
+      {/* Classical bust background image */}
+      <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 opacity-[0.08] pointer-events-none">
         <img 
-          src="/lovable-uploads/40a96855-c9b0-49cf-b573-998cd979be56.png" 
+          src="/lovable-uploads/a8d0c9f1-8b95-4207-870d-2f03a99ac1f6.png" 
           alt="" 
           className="w-full h-full object-contain"
         />
