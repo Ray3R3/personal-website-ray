@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react';
 
 const Index = () => {
@@ -20,7 +21,7 @@ const Index = () => {
       {/* New uploaded background image - more visible */}
       <div className="absolute inset-0 opacity-[0.08] pointer-events-none">
         <img 
-          src="/lovable-uploads/2bdbc61c-1813-4c03-b2a2-89c224d65fa4.png" 
+          src="/lovable-uploads/0b1ff97e-2062-4113-883f-01359307aedb.png" 
           alt="" 
           className="w-full h-full object-cover object-center"
         />
