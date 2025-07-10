@@ -18,12 +18,12 @@ const Index = () => {
         <div className="absolute bottom-40 right-20 w-96 h-96 bg-blue-400 rounded-full blur-3xl"></div>
       </div>
 
-      {/* New uploaded background image - more visible */}
-      <div className="absolute inset-0 opacity-[0.08] pointer-events-none">
+      {/* New uploaded background image - smaller and centered */}
+      <div className="absolute inset-0 opacity-[0.08] pointer-events-none flex items-center justify-center">
         <img 
           src="/lovable-uploads/0b1ff97e-2062-4113-883f-01359307aedb.png" 
           alt="" 
-          className="w-full h-full object-cover object-center"
+          className="w-96 h-96 object-contain"
         />
       </div>
 
