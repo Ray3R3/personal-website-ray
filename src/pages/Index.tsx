@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 
 const Index = () => {
@@ -24,6 +23,15 @@ const Index = () => {
           src="/lovable-uploads/4bb57568-5b13-4bb1-b44f-1b1f5e2f6b73.png" 
           alt="" 
           className="w-full h-full object-cover object-center"
+        />
+      </div>
+
+      {/* New classical bust background image */}
+      <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 opacity-[0.03] pointer-events-none">
+        <img 
+          src="/lovable-uploads/40a96855-c9b0-49cf-b573-998cd979be56.png" 
+          alt="" 
+          className="w-full h-full object-contain"
         />
       </div>
 
