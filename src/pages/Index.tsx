@@ -135,7 +135,7 @@ const Index = () => {
           </div>
           <div className="bg-gray-900/30 backdrop-blur-sm p-6 rounded-lg border border-gray-800/50">
             <p className="text-gray-300 leading-relaxed text-base font-light">
-              Cambridge dropout. Credit Suisse Scholar. Created my own degree combining law, art history, philosophy and science. Started a company at 19 at Cambridge, raised pre-seed from professors then left to build, learned that regulatory restrictions kill companies faster than bad product-market fit. Now I identify exceptional individuals and help them navigate the machinery that constrains European innovation.
+              Cambridge dropout. Credit Suisse Scholar. Created my own degree combining law, art history, philosophy and science. Started a company at 19 at Cambridge, convinced some professors to fund me then left to build, learned that regulatory restrictions kill companies faster than bad product-market fit. Now I identify exceptional individuals and help them navigate the machinery that constrains European innovation.
             </p>
           </div>
         </section>
