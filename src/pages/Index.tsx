@@ -17,21 +17,12 @@ const Index = () => {
         <div className="absolute bottom-40 right-20 w-96 h-96 bg-blue-400 rounded-full blur-3xl"></div>
       </div>
 
-      {/* New uploaded background image */}
-      <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
+      {/* New uploaded background image - more visible */}
+      <div className="absolute inset-0 opacity-[0.08] pointer-events-none">
         <img 
-          src="/lovable-uploads/4bb57568-5b13-4bb1-b44f-1b1f5e2f6b73.png" 
+          src="/lovable-uploads/2bdbc61c-1813-4c03-b2a2-89c224d65fa4.png" 
           alt="" 
           className="w-full h-full object-cover object-center"
-        />
-      </div>
-
-      {/* New classical bust background image */}
-      <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 opacity-[0.03] pointer-events-none">
-        <img 
-          src="/lovable-uploads/40a96855-c9b0-49cf-b573-998cd979be56.png" 
-          alt="" 
-          className="w-full h-full object-contain"
         />
       </div>
 
