@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 
 const Index = () => {
@@ -18,12 +17,12 @@ const Index = () => {
         <div className="absolute bottom-40 right-20 w-96 h-96 bg-blue-400 rounded-full blur-3xl"></div>
       </div>
 
-      {/* New uploaded background image - smaller and centered */}
-      <div className="absolute inset-0 opacity-[0.05] pointer-events-none flex items-center justify-center">
+      {/* New uploaded background image - positioned to the right side */}
+      <div className="absolute top-1/2 right-0 transform -translate-y-1/2 opacity-[0.02] pointer-events-none">
         <img 
           src="/lovable-uploads/0b1ff97e-2062-4113-883f-01359307aedb.png" 
           alt="" 
-          className="w-96 h-96 object-contain"
+          className="w-[500px] h-[500px] object-contain"
         />
       </div>
 
@@ -72,7 +71,7 @@ const Index = () => {
               <div className="flex items-start gap-4">
                 <div className="w-1.5 h-1.5 bg-gray-500 rounded-full mt-2 group-hover:bg-orange-400 transition-colors duration-300"></div>
                 <div>
-                  <p className="text-sm font-light">Emerging technology investments at <span className="text-white font-medium">Auctor</span></p>
+                  <p className="text-sm font-light">Emerging technology investments at <a href="https://www.auctorgroup.com/" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:text-orange-400 transition-colors duration-200">Auctor</a></p>
                 </div>
               </div>
             </div>
@@ -81,7 +80,7 @@ const Index = () => {
               <div className="flex items-start gap-4">
                 <div className="w-1.5 h-1.5 bg-gray-500 rounded-full mt-2 group-hover:bg-orange-400 transition-colors duration-300"></div>
                 <div>
-                  <p className="text-sm font-light">Defense private equity at <span className="text-white font-medium">Stellex</span></p>
+                  <p className="text-sm font-light">Defense private equity at <a href="https://www.stellexcapital.com/" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:text-orange-400 transition-colors duration-200">Stellex</a></p>
                 </div>
               </div>
             </div>
@@ -90,7 +89,16 @@ const Index = () => {
               <div className="flex items-start gap-4">
                 <div className="w-1.5 h-1.5 bg-gray-500 rounded-full mt-2 group-hover:bg-orange-400 transition-colors duration-300"></div>
                 <div>
-                  <p className="text-sm font-light">Technology research at <span className="text-white font-medium">Credit Suisse</span> (top 0.5% globally in their global challenge). Credit Suisse Scholar.</p>
+                  <p className="text-sm font-light">Technology research at <a href="https://www.ubs.com/ch/en/microsites/ubs-acquisition-of-credit-suisse.html" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:text-orange-400 transition-colors duration-200">Credit Suisse</a> (top 0.5% globally in their global challenge). Credit Suisse Scholar.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="group">
+              <div className="flex items-start gap-4">
+                <div className="w-1.5 h-1.5 bg-gray-500 rounded-full mt-2 group-hover:bg-orange-400 transition-colors duration-300"></div>
+                <div>
+                  <p className="text-sm font-light">Law, Art History & Philosophy at <a href="https://www.cam.ac.uk/" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:text-orange-400 transition-colors duration-200">Cambridge</a> (dropped out to build)</p>
                 </div>
               </div>
             </div>
