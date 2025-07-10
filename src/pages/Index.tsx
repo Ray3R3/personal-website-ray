@@ -26,10 +26,10 @@ const Index = () => {
         />
       </div>
 
-      {/* Classical bust background image */}
-      <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 opacity-[0.08] pointer-events-none">
+      {/* New classical bust background image */}
+      <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 opacity-[0.03] pointer-events-none">
         <img 
-          src="/lovable-uploads/a8d0c9f1-8b95-4207-870d-2f03a99ac1f6.png" 
+          src="/lovable-uploads/40a96855-c9b0-49cf-b573-998cd979be56.png" 
           alt="" 
           className="w-full h-full object-contain"
         />
@@ -65,7 +65,7 @@ const Index = () => {
             </div>
           </div>
           <p className="text-gray-300 text-lg md:text-xl leading-relaxed font-light">
-            I find founders who build where capital intensity meets technology risk—the uncomfortable beginning points that most people systematically avoid. Regulatory complexity isn't a bug, it's the feature that builds monopolies.<br />My interests span finding outlier individuals, harnessing the systematic forces that create breakthrough companies, and occasionally backing both with my own capital.
+            I find founders who build where capital intensity meets technology risk—the uncomfortable beginning points that most people systematically avoid. Regulatory complexity isn't a bug, it's the feature that builds monopolies.<br /><br />My interests span finding outlier individuals, harnessing the systematic forces that create breakthrough companies, and occasionally backing both with my own capital.
           </p>
         </header>
 
