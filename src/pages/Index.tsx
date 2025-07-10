@@ -57,7 +57,7 @@ const Index = () => {
             </div>
           </div>
           <p className="text-gray-300 text-base md:text-lg leading-relaxed font-light">
-            I find founders who build where capital intensity meets technology risk—the uncomfortable beginning points that most people systematically avoid. Regulatory complexity isn't a bug, it's the feature that builds monopolies.<br /><br />My interests span finding outlier individuals, harnessing the systematic forces that create breakthrough companies, and occasionally backing both with my own capital.
+            I find founders who build where capital intensity meets technology risk—the uncomfortable beginning points that most founders tend to avoid. Technical and regulatory complexity aren't bugs, they're the features that build monopolies.<br /><br />My interests span finding outlier individuals, harnessing the systematic forces that create breakthrough companies, and occasionally backing both with my own capital.
           </p>
         </header>
 
