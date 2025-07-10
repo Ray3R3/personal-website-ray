@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 
 const Index = () => {
@@ -11,7 +10,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-gray-100 font-satoshi relative overflow-hidden">
+    <div className="min-h-screen bg-[#0a0a0a] text-gray-100 font-dm-sans relative overflow-hidden">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div className="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
