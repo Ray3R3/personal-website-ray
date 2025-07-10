@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react';
 
 const Index = () => {
@@ -15,6 +16,15 @@ const Index = () => {
       <div className="absolute inset-0 opacity-[0.02]">
         <div className="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
         <div className="absolute bottom-40 right-20 w-96 h-96 bg-blue-400 rounded-full blur-3xl"></div>
+      </div>
+
+      {/* New uploaded background image */}
+      <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
+        <img 
+          src="/lovable-uploads/4bb57568-5b13-4bb1-b44f-1b1f5e2f6b73.png" 
+          alt="" 
+          className="w-full h-full object-cover object-center"
+        />
       </div>
 
       {/* Classical bust background with parallax effect */}
@@ -154,7 +164,7 @@ const Index = () => {
               </a>
               {" | "}
               <a 
-                href="#" 
+                href="https://www.linkedin.com/in/ray-3r3/" 
                 className="text-blue-400 hover:text-blue-300 transition-colors duration-200 underline decoration-transparent hover:decoration-blue-400 underline-offset-4 decoration-1"
               >
                 linkedin
