@@ -37,9 +37,9 @@ const Index = () => {
         {/* Hero Background Image with Dark Overlay */}
         <div className="absolute inset-0">
           <img 
-            src="/lovable-uploads/77682d7c-a923-4df3-9e0c-2a4f0b449d28.png" 
+            src="/lovable-uploads/a8d0c9f1-8b95-4207-870d-2f03a99ac1f6.png" 
             alt="" 
-            className="w-full h-full object-cover object-center"
+            className="w-full h-2/3 object-cover object-center"
           />
           <div className="absolute inset-0 bg-black/75"></div>
         </div>
@@ -71,7 +71,7 @@ const Index = () => {
             <div className="flex items-center gap-4 mb-12">
               <div className="w-1 h-16 bg-gradient-to-b from-amber-400 to-amber-600 rounded-full"></div>
               <div>
-                <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-3">
+                <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-3">
                   Ray Erewunmi
                 </h1>
                 <p className="text-gray-300 text-base font-light tracking-wider lowercase">
@@ -94,7 +94,7 @@ const Index = () => {
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-12">
                 <div className="w-3 h-3 bg-amber-400 rounded-full"></div>
-                <h2 className="text-2xl font-medium tracking-wide text-amber-400">previously</h2>
+                <h2 className="text-2xl font-medium tracking-wide text-amber-400 hover:text-amber-300 transition-colors duration-300">previously</h2>
               </div>
               <div className="space-y-6 text-gray-300">
                 <div className="group">
@@ -149,11 +149,11 @@ const Index = () => {
         {/* Funding and Building Section */}
         <section className="mb-32 fade-on-scroll opacity-0">
           <div className="flex items-start gap-6">
-            <div className="w-px h-full bg-amber-400/30 mt-8"></div>
+            <div className="w-px h-full bg-emerald-400/30 mt-8"></div>
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-12">
                 <div className="w-3 h-3 bg-amber-400 rounded-full"></div>
-                <h2 className="text-2xl font-medium tracking-wide text-amber-400">finding, funding and building</h2>
+                <h2 className="text-2xl font-medium tracking-wide text-emerald-400 hover:text-emerald-300 transition-colors duration-300">finding, funding and building</h2>
               </div>
               <p className="text-gray-300 mb-12 text-lg leading-relaxed">
                 I find exceptional individuals and breakthrough opportunities in domains where capital intensity, technological risk, and regulatory complexity create natural monopolies:
@@ -203,11 +203,11 @@ const Index = () => {
         {/* What's On My Mind Section */}
         <section className="mb-32 fade-on-scroll opacity-0">
           <div className="flex items-start gap-6">
-            <div className="w-px h-full bg-amber-400/30 mt-8"></div>
+            <div className="w-px h-full bg-blue-400/30 mt-8"></div>
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-12">
-                <div className="w-3 h-3 bg-amber-400 rounded-full"></div>
-                <h2 className="text-2xl font-medium tracking-wide text-amber-400">what's on my mind</h2>
+                <div className="w-3 h-3 bg-blue-400 rounded-full"></div>
+                <h2 className="text-2xl font-medium tracking-wide text-blue-400 hover:text-blue-300 transition-colors duration-300">what's on my mind</h2>
               </div>
               <p className="text-gray-300 mb-12 text-lg leading-relaxed">
                 How breakthrough adoption follows historical patterns, why exceptional individuals are drawn to certain domains, how innovation spreads despite entrenched systems, and the systematic forces that create both outlier founders and generation-defining companies:
@@ -223,7 +223,7 @@ const Index = () => {
                   'macroeconomic forces'
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-4 group hover:translate-x-3 transition-transform duration-300">
-                    <div className="w-1.5 h-1.5 bg-gray-600 rounded-full group-hover:bg-amber-400 transition-colors duration-200"></div>
+                    <div className="w-1.5 h-1.5 bg-gray-600 rounded-full group-hover:bg-blue-400 transition-colors duration-200"></div>
                     <span className="text-gray-300 text-base font-light">{item}</span>
                   </div>
                 ))}
@@ -235,11 +235,11 @@ const Index = () => {
         {/* When Not Thinking About Monopolies Section */}
         <section className="mb-32 fade-on-scroll opacity-0">
           <div className="flex items-start gap-6">
-            <div className="w-px h-full bg-amber-400/30 mt-8"></div>
+            <div className="w-px h-full bg-purple-400/30 mt-8"></div>
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-12">
-                <div className="w-3 h-3 bg-amber-400 rounded-full"></div>
-                <h2 className="text-2xl font-medium tracking-wide text-amber-400">when not thinking about monopolies</h2>
+                <div className="w-3 h-3 bg-purple-400 rounded-full"></div>
+                <h2 className="text-2xl font-medium tracking-wide text-purple-400 hover:text-purple-300 transition-colors duration-300">when not thinking about monopolies</h2>
               </div>
               
               <div className="grid gap-4">
@@ -250,7 +250,7 @@ const Index = () => {
                   'Wondering why people think institutional power structures are "new" when they follow 500-year-old patterns'
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-4 group hover:translate-x-3 transition-transform duration-300">
-                    <div className="w-1.5 h-1.5 bg-gray-600 rounded-full group-hover:bg-amber-400 transition-colors duration-200"></div>
+                    <div className="w-1.5 h-1.5 bg-gray-600 rounded-full group-hover:bg-purple-400 transition-colors duration-200"></div>
                     <span className="text-gray-300 text-base font-light">{item}</span>
                   </div>
                 ))}
@@ -262,11 +262,11 @@ const Index = () => {
         {/* Background Section */}
         <section className="mb-32 fade-on-scroll opacity-0">
           <div className="flex items-start gap-6">
-            <div className="w-px h-full bg-amber-400/30 mt-8"></div>
+            <div className="w-px h-full bg-rose-400/30 mt-8"></div>
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-12">
-                <div className="w-3 h-3 bg-amber-400 rounded-full"></div>
-                <h2 className="text-2xl font-medium tracking-wide text-amber-400">background</h2>
+                <div className="w-3 h-3 bg-rose-400 rounded-full"></div>
+                <h2 className="text-2xl font-medium tracking-wide text-rose-400 hover:text-rose-300 transition-colors duration-300">background</h2>
               </div>
               <div className="bg-gray-900/40 backdrop-blur-sm p-8 rounded-lg border border-gray-800/50">
                 <p className="text-gray-300 leading-relaxed text-lg font-light">
