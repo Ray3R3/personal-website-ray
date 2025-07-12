@@ -56,15 +56,4 @@ All colors MUST be HSL.
     @apply bg-background text-foreground font-dm-sans;
     line-height: 1.6;
   }
-
-  /* Fade-in animation */
-  .fade-on-scroll {
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    transform: translateY(20px);
-  }
-
-  .animate-fade-in {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-  }
 }
