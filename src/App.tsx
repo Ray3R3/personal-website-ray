@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Writing from "./pages/Writing";
+import Library from "./pages/Library";
 import BuildingUncomfortableSpaces from "./pages/articles/BuildingUncomfortableSpaces";
 import MediciModel from "./pages/articles/MediciModel";
 import ArchitectureOfAttention from "./pages/articles/ArchitectureOfAttention";
@@ -24,6 +25,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/writing" element={<Writing />} />
+          <Route path="/library" element={<Library />} />
         <Route path="/writing/building-uncomfortable-spaces" element={<BuildingUncomfortableSpaces />} />
         <Route path="/writing/medici-model-venture-capital" element={<MediciModel />} />
         <Route path="/writing/architecture-of-attention" element={<ArchitectureOfAttention />} />

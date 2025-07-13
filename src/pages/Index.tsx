@@ -44,12 +44,18 @@ const Index = () => {
       />
 
       {/* Navigation */}
-      <nav className="absolute top-8 right-8 z-20">
+      <nav className="absolute top-8 right-8 z-20 flex gap-4">
         <a 
           href="/writing" 
-          className="relative text-white font-light tracking-wide transition-all duration-300 hover:text-white/80 after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-white after:bottom-0 after:left-0 after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 bg-black/20 backdrop-blur-sm px-4 py-2 rounded-full"
+          className="relative text-white font-light tracking-wide transition-all duration-300 hover:text-white/80 after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-white after:bottom-0 after:left-0 after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 bg-black/40 backdrop-blur-sm px-4 py-2 rounded-full"
         >
           Writing
+        </a>
+        <a 
+          href="/library" 
+          className="relative text-white font-light tracking-wide transition-all duration-300 hover:text-white/80 after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-white after:bottom-0 after:left-0 after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 bg-black/40 backdrop-blur-sm px-4 py-2 rounded-full"
+        >
+          Library
         </a>
       </nav>
 
