@@ -43,6 +43,16 @@ const Index = () => {
         }}
       />
 
+      {/* Navigation */}
+      <nav className="absolute top-8 right-8 z-20">
+        <a 
+          href="/writing" 
+          className="text-foreground/80 hover:text-foreground font-light tracking-wide transition-colors duration-200"
+        >
+          Writing
+        </a>
+      </nav>
+
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center justify-start overflow-hidden">
         <div 
@@ -71,7 +81,12 @@ const Index = () => {
           <div className="text-base md:text-lg text-muted-foreground leading-relaxed">
             I find exceptional builders and back them—often in the uncomfortable spaces where capital intensity meets regulatory complexity, where others see barriers but I see moats. My interests span the systematic forces that create breakthrough companies and the outlier individuals who ignore conventional wisdom to build them.
           </div>
-        </div>
+          </div>
+          
+          {/* Image Credit */}
+          <div className="absolute bottom-4 right-4 text-xs text-muted-foreground/50">
+            Megan Gafford - Artist Statement: Chesterton's Fence
+          </div>
       </section>
       
       <div className="max-w-4xl mx-auto px-8 py-20 md:py-32 relative z-10">
