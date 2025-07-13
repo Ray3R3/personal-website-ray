@@ -6,7 +6,7 @@ import PersonalityBullet from '../components/PersonalityBullet';
 import AnimatedParticles from '../components/AnimatedParticles';
 
 const QuoteTyping = () => {
-  const quoteText = "The people in the computer industry who are most successful are those who have lived in many different worlds — the humanities and the sciences, arts and technology. It's that intersection that produces the most innovative solutions.";
+  const quoteText = "Edwin Land of Polaroid talked about the intersection of the humanities and science. I like that intersection. There's something magical about that place.";
   const citationText = "— Walter Isaacson, Steve Jobs";
   const { displayText: quoteDisplay, isComplete: quoteComplete } = useTypingAnimation(quoteText, 30);
   const { displayText: citationDisplay } = useTypingAnimation(quoteComplete ? citationText : "", 30);
@@ -86,7 +86,7 @@ const Index = () => {
           <SectionCard accent="blue">
             <div className="space-y-6 text-muted-foreground">
               <PersonalityBullet hoverColor="hsl(211, 100%, 62%)">
-                Built technology investments at <a href="https://www.auctorgroup.com/" target="_blank" rel="noopener noreferrer" className="text-foreground font-medium hover:text-blue-400 transition-colors duration-200">Auctor</a>
+                Emerging technology investments at <a href="https://www.auctorgroup.com/" target="_blank" rel="noopener noreferrer" className="text-foreground font-medium hover:text-blue-400 transition-colors duration-200">Auctor</a>
               </PersonalityBullet>
               <PersonalityBullet hoverColor="hsl(211, 100%, 62%)">
                 Defense private equity at <a href="https://www.stellexcapital.com/" target="_blank" rel="noopener noreferrer" className="text-foreground font-medium hover:text-blue-400 transition-colors duration-200">Stellex</a>
@@ -98,7 +98,7 @@ const Index = () => {
                 Credit Suisse Scholar (full academic scholarship)
               </PersonalityBullet>
               <PersonalityBullet hoverColor="hsl(211, 100%, 62%)">
-                Started at <a href="https://www.cam.ac.uk/" target="_blank" rel="noopener noreferrer" className="text-foreground font-medium hover:text-blue-400 transition-colors duration-200">Cambridge</a> studying law, art history & philosophy—dropped out to build
+                Law, Art History & Philosophy at <a href="https://www.cam.ac.uk/" target="_blank" rel="noopener noreferrer" className="text-foreground font-medium hover:text-blue-400 transition-colors duration-200">Cambridge</a> (dropped out to build)
               </PersonalityBullet>
             </div>
           </SectionCard>
