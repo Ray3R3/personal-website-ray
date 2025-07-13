@@ -6,40 +6,21 @@ const mockArticles = [
     title: "On Building in Uncomfortable Spaces",
     date: "March 15, 2024",
     excerpt: "Why the most defensible companies emerge from domains where capital intensity meets regulatory complexity, and others see barriers but I see moats.",
-    content: `
-      <p>There's a pattern in breakthrough companies that most people miss: they emerge from spaces that feel uncomfortable to build in. Not uncomfortable because they're technically hard—Silicon Valley has plenty of those. Uncomfortable because they require patient capital, regulatory sophistication, and the ability to navigate institutional buyers who move slowly.</p>
-      
-      <p>Everyone wants to build software. It's clean, scalable, and the feedback loops are immediate. But the most defensible businesses I've seen exist at the intersection of atoms and bits, where the barriers to entry aren't just about better code—they're about better relationships with regulators, deeper understanding of compliance frameworks, and the patience to deploy capital over years, not months.</p>
-
-      <p>Consider the defense technology renaissance. Companies like Palantir, Anduril, and Shield AI didn't succeed because they built better algorithms (though they did). They succeeded because they understood how to sell to institutions that had been buying the same solutions for decades. They built technology that worked within existing procurement processes while fundamentally transforming what was possible.</p>
-
-      <p>This is what I call "Trojan Horse innovation"—appearing compatible with existing systems while quietly revolutionizing them from within. It requires a different kind of founder: one who can speak both languages, technical and institutional, and who sees regulatory complexity not as a bug but as a feature that keeps competition away.</p>
-
-      <p>The opportunity space is vast. Financial infrastructure that central banks trust. Manufacturing processes that work in extreme environments. Energy systems that don't need subsidies. Transportation networks that can scale across continents. These aren't software problems—they're systems problems that happen to include software.</p>
-
-      <p>The uncomfortable truth is that breakthrough innovation often looks boring from the outside. It's not disruption in the Valley sense—it's infiltration. Building what looks like a better version of something that already exists, but with architecture that enables completely new possibilities.</p>
-    `,
+    slug: "building-uncomfortable-spaces"
   },
   {
     id: 2,
     title: "The Medici Model: Venture Capital's Renaissance Precedent",
     date: "February 8, 2024", 
     excerpt: "How 15th-century Florentine patronage patterns predict modern venture capital dynamics—and why understanding historical precedents matters for modern allocators.",
-    content: `
-      <p>The Medici family's approach to patronage in Renaissance Florence wasn't philanthropy—it was a systematic investment strategy that created network effects across domains. They understood something that modern venture capital has largely forgotten: breakthrough innovation happens at the intersection of disciplines, not within them.</p>
-
-      <p>Cosimo de' Medici didn't just fund artists. He created a salon culture where mathematicians talked to architects, philosophers debated with engineers, and artists collaborated with inventors. The result wasn't just great art—it was technological revolution. Brunelleschi's dome, Leonardo's machines, Galileo's observations. Innovation at the intersection.</p>
-
-      <p>Modern venture capital operates with portfolio theory derived from financial markets, but the Medici model suggests a different approach: creating dense networks of exceptional individuals and letting serendipity work at scale. Instead of betting on individual companies, bet on clusters of capability that reinforce each other.</p>
-
-      <p>This is why geographic density matters in venture capital. It's not just about knowledge spillovers—it's about creating conditions for systematic serendipity. When Andreessen Horowitz talks about building community, they're unconsciously recreating Medici salon dynamics at scale.</p>
-
-      <p>But here's what most people miss: the Medici weren't passive funders. They were active curators of talent and ideas. They created artificial scarcity around access to their networks, which increased the value of membership. They understood that exclusivity isn't elitism—it's network engineering.</p>
-
-      <p>The parallel to modern venture is clear. The best firms aren't just capital allocators—they're network architects. They create systematic opportunities for their portfolio companies to collaborate, compete, and cross-pollinate. They understand that the value of the network grows exponentially with the quality of its nodes.</p>
-
-      <p>This suggests a different model for institutional capital deployment: instead of diversifying across uncorrelated assets, concentrate on creating dense networks of correlated capabilities. Fund not just companies, but entire technological ecosystems. Build not just portfolio companies, but innovation communities.</p>
-    `,
+    slug: "medici-model-venture-capital"
+  },
+  {
+    id: 3,
+    title: "The Architecture of Attention: How Digital Environments Shape Thought",
+    date: "January 22, 2024",
+    excerpt: "Why the design of our information environments matters more than the information itself—and what this means for how we think, create, and coordinate.",
+    slug: "architecture-of-attention"
   },
 ];
 
@@ -69,7 +50,7 @@ const Writing = () => {
             Writing
           </h1>
           <p className={`text-lg text-muted-foreground font-light leading-relaxed transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            Thoughts on systematic forces behind breakthrough companies, outlier talent identification, and why institutional deployment patterns matter more than technology.
+            Essays on pattern recognition across domains—from institutional dynamics and systematic forces to cultural analysis and the architecture of human coordination.
           </p>
         </div>
       </section>
@@ -92,10 +73,13 @@ const Writing = () => {
                 <p className="text-muted-foreground leading-relaxed mb-6 text-lg font-light">
                   {article.excerpt}
                 </p>
-                <button className="text-foreground/80 hover:text-foreground font-light tracking-wide transition-colors duration-200 group">
+                <a 
+                  href={`/writing/${article.slug}`}
+                  className="text-foreground/80 hover:text-foreground font-light tracking-wide transition-colors duration-200 group"
+                >
                   Read full article
                   <span className="inline-block ml-2 transition-transform duration-200 group-hover:translate-x-1">→</span>
-                </button>
+                </a>
               </div>
             </article>
           ))}
