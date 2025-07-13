@@ -2,109 +2,127 @@
 import { useEffect, useState } from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useTypingAnimation } from '../hooks/useTypingAnimation';
-import EditorialCard from '../components/EditorialCard';
+import SectionCard from '../components/SectionCard';
 import PersonalityBullet from '../components/PersonalityBullet';
+import AnimatedParticles from '../components/AnimatedParticles';
 
 const Index = () => {
   const { scrollY } = useScrollAnimation();
   const [isVisible, setIsVisible] = useState(false);
   
-  const introText = "I see patterns others miss. While most people avoid domains where capital requirements are high and technology risk is real, I find that's exactly where the most interesting opportunities hide. The uncomfortable intersections where others won't go—that's where monopolies get built.";
-  const { displayText, isComplete } = useTypingAnimation(introText, 25);
+  const quoteText = "Edwin Land of Polaroid talked about the intersection of the humanities and science. I like that intersection. There's something magical about that place.";
+  const { displayText: quoteDisplay, isComplete: quoteComplete } = useTypingAnimation(quoteText, 30);
+  
+  const introText = "I find exceptional builders and back them—often in the uncomfortable spaces where capital intensity meets regulatory complexity, where others see barriers but I see moats. My interests span the systematic forces that create breakthrough companies and the outlier individuals who ignore conventional wisdom to build them.";
+  const { displayText: introDisplay, isComplete: introComplete } = useTypingAnimation(introText, 20);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-dm-sans relative">
-      {/* Subtle warm background elements */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div 
-          className="absolute top-20 left-10 w-96 h-96 bg-amber-400 rounded-full blur-3xl transition-transform duration-500"
-          style={{ transform: `translate(${scrollY * 0.03}px, ${scrollY * 0.02}px)` }}
-        />
-        <div 
-          className="absolute bottom-40 right-20 w-80 h-80 bg-orange-300 rounded-full blur-3xl transition-transform duration-500"
-          style={{ transform: `translate(${-scrollY * 0.02}px, ${scrollY * 0.03}px)` }}
-        />
-      </div>
-
-      {/* Warm pattern overlay */}
+    <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+      {/* Animated particles background */}
+      <AnimatedParticles />
+      
+      {/* Grain texture overlay */}
       <div 
-        className="absolute right-0 top-0 w-96 h-screen opacity-[0.01] pointer-events-none transition-transform duration-300"
-        style={{ transform: `translateY(${scrollY * 0.1}px)` }}
+        className="absolute inset-0 opacity-[var(--grain-opacity)] pointer-events-none animate-grain"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+        }}
+      />
+
+      {/* Hero background with Totoro image and parallax */}
+      <div 
+        className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-background/90"
+        style={{ 
+          backgroundImage: `url('/lovable-uploads/2bdbc61c-1813-4c03-b2a2-89c224d65fa4.png')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+          transform: `translateY(${scrollY * 0.3}px)`,
+        }}
       >
-        <img 
-          src="/lovable-uploads/6f7e419a-cada-4358-9f77-78a2da5626b4.png" 
-          alt="" 
-          className="w-full h-full object-contain object-center"
-        />
+        <div className="absolute inset-0 bg-background/80" />
       </div>
       
-      <div className="max-w-3xl mx-auto px-8 py-20 md:py-28 relative z-10">
+      <div className="max-w-4xl mx-auto px-8 py-20 md:py-32 relative z-10">
         {/* Hero Section */}
-        <header className={`mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="mb-12">
-            <h1 className="text-4xl md:text-5xl font-light tracking-tight text-foreground mb-6 leading-tight">
+        <header className={`mb-32 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="text-center mb-16">
+            <h1 className="text-6xl md:text-7xl font-light tracking-tight text-foreground mb-8 leading-tight">
               Ray Erewunmi
             </h1>
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-1 h-12 bg-amber-400"></div>
-              <p className="text-xl md:text-2xl text-muted-foreground font-light">
-                Pattern Recognition in Practice
-              </p>
+            <div className="flex items-center justify-center gap-6 mb-12">
+              <span className="text-2xl md:text-3xl text-muted-foreground font-light">builder</span>
+              <div className="w-1 h-8 bg-primary"></div>
+              <span className="text-2xl md:text-3xl text-muted-foreground font-light">philosopher</span>
+              <div className="w-1 h-8 bg-primary"></div>
+              <span className="text-2xl md:text-3xl text-muted-foreground font-light">investor</span>
             </div>
           </div>
           
-          <EditorialCard className="mb-8">
-            <p className="text-lg md:text-xl leading-relaxed font-light text-foreground min-h-[140px]">
-              {displayText}
-              {!isComplete && <span className="animate-pulse text-amber-400">|</span>}
-              <br /><br />
-              {isComplete && (
-                <span className="animate-fade-in text-muted-foreground">
-                  I invest my own capital, build companies, and occasionally help others do both. My interests span finding exceptional people and the systematic forces that create breakthrough companies.
-                </span>
+          {/* Quote with typing animation */}
+          <SectionCard className="mb-12 text-center max-w-4xl mx-auto">
+            <blockquote className="text-xl md:text-2xl leading-relaxed font-light text-foreground italic min-h-[120px]">
+              "{quoteDisplay}"
+              {!quoteComplete && <span className="animate-pulse text-primary">|</span>}
+              {quoteComplete && (
+                <footer className="mt-6 text-muted-foreground text-lg not-italic">
+                  — Walter Isaacson, Steve Jobs
+                </footer>
               )}
-            </p>
-          </EditorialCard>
+            </blockquote>
+          </SectionCard>
+
+          {/* Intro paragraph */}
+          {quoteComplete && (
+            <SectionCard className="animate-fade-in">
+              <p className="text-lg md:text-xl leading-relaxed text-muted-foreground text-center min-h-[100px]">
+                {introDisplay}
+                {!introComplete && <span className="animate-pulse text-primary">|</span>}
+              </p>
+            </SectionCard>
+          )}
         </header>
 
         {/* Previously Section */}
-        <section className={`mb-20 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="flex items-center gap-4 mb-8">
-            <h2 className="text-2xl font-light tracking-wide text-foreground">previously</h2>
-            <div className="flex-1 h-px bg-border"></div>
+        <section className={`mb-24 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="flex items-center gap-4 mb-10">
+            <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+            <h2 className="text-3xl font-light tracking-wide text-foreground">previously</h2>
+            <div className="flex-1 h-px bg-gradient-to-r from-blue-500/50 to-transparent"></div>
           </div>
-          <EditorialCard>
-            <div className="space-y-5 text-muted-foreground">
+          <SectionCard accent="blue">
+            <div className="space-y-6 text-muted-foreground">
               <PersonalityBullet>
-                Built technology investments at <a href="https://www.auctorgroup.com/" target="_blank" rel="noopener noreferrer" className="text-foreground font-medium hover:text-amber-400 transition-colors duration-200">Auctor</a>
+                Built technology investments at <a href="https://www.auctorgroup.com/" target="_blank" rel="noopener noreferrer" className="text-foreground font-medium hover:text-blue-400 transition-colors duration-200">Auctor</a>
               </PersonalityBullet>
               <PersonalityBullet>
-                Defense private equity at <a href="https://www.stellexcapital.com/" target="_blank" rel="noopener noreferrer" className="text-foreground font-medium hover:text-amber-400 transition-colors duration-200">Stellex</a>
+                Defense private equity at <a href="https://www.stellexcapital.com/" target="_blank" rel="noopener noreferrer" className="text-foreground font-medium hover:text-blue-400 transition-colors duration-200">Stellex</a>
               </PersonalityBullet>
               <PersonalityBullet>
-                Technology research at <a href="https://www.ubs.com/ch/en/microsites/ubs-acquisition-of-credit-suisse.html" target="_blank" rel="noopener noreferrer" className="text-foreground font-medium hover:text-amber-400 transition-colors duration-200">Credit Suisse</a> (top 0.5% globally in their coding challenge)
+                Technology research at <a href="https://www.ubs.com/ch/en/microsites/ubs-acquisition-of-credit-suisse.html" target="_blank" rel="noopener noreferrer" className="text-foreground font-medium hover:text-blue-400 transition-colors duration-200">Credit Suisse</a> (top 0.5% globally in their coding challenge)
               </PersonalityBullet>
               <PersonalityBullet>
                 Credit Suisse Scholar (full academic scholarship)
               </PersonalityBullet>
               <PersonalityBullet>
-                Started at <a href="https://www.cam.ac.uk/" target="_blank" rel="noopener noreferrer" className="text-foreground font-medium hover:text-amber-400 transition-colors duration-200">Cambridge</a> studying law, art history & philosophy—dropped out to build
+                Started at <a href="https://www.cam.ac.uk/" target="_blank" rel="noopener noreferrer" className="text-foreground font-medium hover:text-blue-400 transition-colors duration-200">Cambridge</a> studying law, art history & philosophy—dropped out to build
               </PersonalityBullet>
             </div>
-          </EditorialCard>
+          </SectionCard>
         </section>
 
         {/* Finding, Funding and Building Section */}
-        <section className={`mb-20 transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="flex items-center gap-4 mb-8">
-            <h2 className="text-2xl font-light tracking-wide text-foreground">finding, funding and building</h2>
-            <div className="flex-1 h-px bg-border"></div>
+        <section className={`mb-24 transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="flex items-center gap-4 mb-10">
+            <div className="w-3 h-3 rounded-full bg-orange-500"></div>
+            <h2 className="text-3xl font-light tracking-wide text-foreground">finding, funding and building</h2>
+            <div className="flex-1 h-px bg-gradient-to-r from-orange-500/50 to-transparent"></div>
           </div>
-          <EditorialCard>
+          <SectionCard accent="orange">
             <p className="text-muted-foreground mb-10 text-lg leading-relaxed">
               I look for exceptional people building in domains where capital intensity, technological risk, and regulatory complexity create natural barriers. These aren't bugs—they're features that keep competition away:
             </p>
@@ -132,26 +150,27 @@ const Index = () => {
               </div>
             </div>
 
-            <EditorialCard className="mt-10 border-l-4 border-amber-400 bg-amber-50/5">
+            <SectionCard className="mt-10 border-l-4 border-orange-500 bg-orange-500/5">
               <p className="text-muted-foreground leading-relaxed">
                 <span className="font-medium text-foreground">Specifically:</span> Marine and aerospace technology with dual-use applications, brain-computer interfaces that work, advanced manufacturing in extreme environments, financial infrastructure that central banks trust, energy systems that don't need subsidies to make sense.
               </p>
-            </EditorialCard>
-          </EditorialCard>
+            </SectionCard>
+          </SectionCard>
         </section>
 
         {/* What's On My Mind Section */}
-        <section className={`mb-20 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="flex items-center gap-4 mb-8">
-            <h2 className="text-2xl font-light tracking-wide text-foreground">what's on my mind</h2>
-            <div className="flex-1 h-px bg-border"></div>
+        <section className={`mb-24 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="flex items-center gap-4 mb-10">
+            <div className="w-3 h-3 rounded-full bg-purple-500"></div>
+            <h2 className="text-3xl font-light tracking-wide text-foreground">what's on my mind</h2>
+            <div className="flex-1 h-px bg-gradient-to-r from-purple-500/50 to-transparent"></div>
           </div>
-          <EditorialCard>
+          <SectionCard accent="purple">
             <p className="text-muted-foreground mb-10 text-lg leading-relaxed">
               How breakthrough adoption follows historical patterns, why exceptional individuals gravitate toward certain domains, how innovation spreads despite entrenched systems. The systematic forces behind both outlier founders and generation-defining companies:
             </p>
             
-            <div className="grid gap-4">
+            <div className="grid gap-5">
               <PersonalityBullet>Identifying outlier talent before everyone else notices</PersonalityBullet>
               <PersonalityBullet>Frameworks for monopoly formation (the good kind)</PersonalityBullet>
               <PersonalityBullet>Why institutional deployment patterns matter more than technology</PersonalityBullet>
@@ -159,17 +178,18 @@ const Index = () => {
               <PersonalityBullet>Historical precedents in technology waves</PersonalityBullet>
               <PersonalityBullet>Macroeconomic forces that create innovation windows</PersonalityBullet>
             </div>
-          </EditorialCard>
+          </SectionCard>
         </section>
 
         {/* When Not Thinking About Monopolies Section */}
-        <section className={`mb-20 transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="flex items-center gap-4 mb-8">
-            <h2 className="text-2xl font-light tracking-wide text-foreground">when not thinking about monopolies</h2>
-            <div className="flex-1 h-px bg-border"></div>
+        <section className={`mb-24 transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="flex items-center gap-4 mb-10">
+            <div className="w-3 h-3 rounded-full bg-purple-400"></div>
+            <h2 className="text-3xl font-light tracking-wide text-foreground">when not thinking about monopolies</h2>
+            <div className="flex-1 h-px bg-gradient-to-r from-purple-400/50 to-transparent"></div>
           </div>
-          <EditorialCard>
-            <div className="grid gap-4">
+          <SectionCard accent="purple">
+            <div className="grid gap-5">
               <PersonalityBullet>
                 Tracing how the Medici patronage system was basically the first VC model
               </PersonalityBullet>
@@ -183,52 +203,59 @@ const Index = () => {
                 Wondering why people think current institutional power structures are "new" when they follow 500-year-old patterns
               </PersonalityBullet>
             </div>
-          </EditorialCard>
+          </SectionCard>
         </section>
 
         {/* Background Section */}
-        <section className={`mb-20 transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="flex items-center gap-4 mb-8">
-            <h2 className="text-2xl font-light tracking-wide text-foreground">background</h2>
-            <div className="flex-1 h-px bg-border"></div>
+        <section className={`mb-24 transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="flex items-center gap-4 mb-10">
+            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+            <h2 className="text-3xl font-light tracking-wide text-foreground">background</h2>
+            <div className="flex-1 h-px bg-gradient-to-r from-yellow-500/50 to-transparent"></div>
           </div>
-          <EditorialCard>
+          <SectionCard accent="gold">
             <p className="text-muted-foreground leading-relaxed text-lg font-light">
               Cambridge dropout. Credit Suisse Scholar. Created my own interdisciplinary degree combining law, art history, philosophy and science. Started a company at 19, convinced some professors to fund it, then left university to build it properly. 
               <br /><br />
               Learned that regulatory restrictions kill companies faster than bad product-market fit. Now I help exceptional individuals navigate the machinery that constrains European innovation—or build around it entirely.
             </p>
-          </EditorialCard>
+          </SectionCard>
         </section>
 
         {/* Contact Section */}
-        <section className={`mb-16 transition-all duration-1000 delay-1200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <EditorialCard className="border-l-4 border-amber-400">
-            <div className="flex items-center gap-4">
-              <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
-              <p className="text-muted-foreground text-lg">
-                <span className="font-medium text-foreground">reach me:</span>{" "}
+        <section className={`mb-20 transition-all duration-1000 delay-1200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="flex items-center gap-4 mb-10">
+            <div className="w-3 h-3 rounded-full bg-green-500"></div>
+            <h2 className="text-3xl font-light tracking-wide text-foreground">contact</h2>
+            <div className="flex-1 h-px bg-gradient-to-r from-green-500/50 to-transparent"></div>
+          </div>
+          <SectionCard accent="green" className="text-center">
+            <div className="space-y-4">
+              <p className="text-muted-foreground text-xl">
+                <span className="font-medium text-foreground">reach me:</span>
+              </p>
+              <div className="flex items-center justify-center gap-8">
                 <a 
                   href="mailto:re379@cam.ac.uk" 
-                  className="text-amber-400 hover:text-amber-300 transition-colors duration-200 underline decoration-transparent hover:decoration-amber-400 underline-offset-4 decoration-1"
+                  className="text-green-400 hover:text-green-300 transition-colors duration-200 underline decoration-transparent hover:decoration-green-400 underline-offset-4 decoration-2 text-lg"
                 >
                   re379@cam.ac.uk
                 </a>
-                {" | "}
+                <div className="w-1 h-6 bg-green-500/50"></div>
                 <a 
                   href="https://www.linkedin.com/in/ray-3r3/" 
-                  className="text-amber-400 hover:text-amber-300 transition-colors duration-200 underline decoration-transparent hover:decoration-amber-400 underline-offset-4 decoration-1"
+                  className="text-green-400 hover:text-green-300 transition-colors duration-200 underline decoration-transparent hover:decoration-green-400 underline-offset-4 decoration-2 text-lg"
                 >
                   linkedin
                 </a>
-              </p>
+              </div>
             </div>
-          </EditorialCard>
+          </SectionCard>
         </section>
 
         {/* Footer */}
-        <footer className={`text-muted-foreground leading-relaxed font-light border-t border-border pt-8 transition-all duration-1000 delay-1400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <p className="text-lg">
+        <footer className={`text-center text-muted-foreground leading-relaxed font-light border-t border-border/30 pt-12 transition-all duration-1000 delay-1400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <p className="text-xl max-w-3xl mx-auto">
             If you're building something that requires serious capital, regulatory approval, or institutional buy-in—especially if everyone else thinks it's "too hard" or "impossible to sell"—let's chat.
           </p>
         </footer>
