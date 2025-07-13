@@ -10,11 +10,11 @@ const QuoteTyping = () => {
   const { displayText } = useTypingAnimation(quoteText, 30);
   
   return (
-    <div className="max-w-3xl mx-auto mb-16">
-      <blockquote className="text-xl md:text-2xl text-foreground/90 italic leading-relaxed font-light text-center">
+    <div className="max-w-3xl mb-16">
+      <blockquote className="text-xl md:text-2xl text-foreground/90 italic leading-relaxed font-light text-left">
         "{displayText}"
       </blockquote>
-      <cite className="block text-muted-foreground mt-4 text-base font-normal not-italic text-center">
+      <cite className="block text-muted-foreground mt-4 text-base font-normal not-italic text-left">
         — Walter Isaacson, Steve Jobs
       </cite>
     </div>
@@ -46,7 +46,7 @@ const Index = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url(/lovable-uploads/02c320e6-f01e-40c5-ab9c-6cac9688a0ec.png)`,
+            backgroundImage: `url(/lovable-uploads/9065d938-4080-4a30-82c5-71d998633f42.png)`,
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-background/20" />
