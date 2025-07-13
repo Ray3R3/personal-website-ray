@@ -1,20 +1,28 @@
 
 import { useEffect, useState } from 'react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useTypingAnimation } from '../hooks/useTypingAnimation';
 import SectionCard from '../components/SectionCard';
 import PersonalityBullet from '../components/PersonalityBullet';
 import AnimatedParticles from '../components/AnimatedParticles';
 
-const Index = () => {
-  const { scrollY } = useScrollAnimation();
-  const [isVisible, setIsVisible] = useState(false);
-  
+const QuoteTyping = () => {
   const quoteText = "Edwin Land of Polaroid talked about the intersection of the humanities and science. I like that intersection. There's something magical about that place.";
-  const { displayText: quoteDisplay, isComplete: quoteComplete } = useTypingAnimation(quoteText, 30);
+  const { displayText } = useTypingAnimation(quoteText, 30);
   
-  const introText = "I find exceptional builders and back them—often in the uncomfortable spaces where capital intensity meets regulatory complexity, where others see barriers but I see moats. My interests span the systematic forces that create breakthrough companies and the outlier individuals who ignore conventional wisdom to build them.";
-  const { displayText: introDisplay, isComplete: introComplete } = useTypingAnimation(introText, 20);
+  return (
+    <div className="max-w-3xl mx-auto mb-16">
+      <blockquote className="text-xl md:text-2xl text-foreground/90 italic leading-relaxed font-light text-center">
+        "{displayText}"
+      </blockquote>
+      <cite className="block text-muted-foreground mt-4 text-base font-normal not-italic text-center">
+        — Walter Isaacson, Steve Jobs
+      </cite>
+    </div>
+  );
+};
+
+const Index = () => {
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
@@ -33,59 +41,37 @@ const Index = () => {
         }}
       />
 
-      {/* Hero background with Totoro image and parallax */}
-      <div 
-        className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-background/90"
-        style={{ 
-          backgroundImage: `url('/lovable-uploads/2bdbc61c-1813-4c03-b2a2-89c224d65fa4.png')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
-          transform: `translateY(${scrollY * 0.3}px)`,
-        }}
-      >
-        <div className="absolute inset-0 bg-background/80" />
-      </div>
+      {/* Hero Section */}
+      <section className="relative h-[80vh] flex items-center justify-start overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url(/lovable-uploads/02c320e6-f01e-40c5-ab9c-6cac9688a0ec.png)`,
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-background/20" />
+        
+        <div className="relative z-10 px-8 max-w-2xl ml-8 md:ml-16">
+          <h1 className="text-5xl md:text-7xl font-light tracking-tight text-foreground mb-4 leading-tight">
+            Ray Erewunmi
+          </h1>
+          <p className="text-lg md:text-xl text-muted-foreground mb-8 font-light tracking-wide">
+            builder | philosopher | investor
+          </p>
+          
+          {/* Quote with Typing Effect */}
+          <div className="mb-8">
+            <QuoteTyping />
+          </div>
+
+          {/* Refined Intro */}
+          <div className="text-base md:text-lg text-muted-foreground leading-relaxed">
+            I find exceptional builders and back them—often in the uncomfortable spaces where capital intensity meets regulatory complexity, where others see barriers but I see moats. My interests span the systematic forces that create breakthrough companies and the outlier individuals who ignore conventional wisdom to build them.
+          </div>
+        </div>
+      </section>
       
       <div className="max-w-4xl mx-auto px-8 py-20 md:py-32 relative z-10">
-        {/* Hero Section */}
-        <header className={`mb-32 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="text-center mb-16">
-            <h1 className="text-6xl md:text-7xl font-light tracking-tight text-foreground mb-8 leading-tight">
-              Ray Erewunmi
-            </h1>
-            <div className="flex items-center justify-center gap-6 mb-12">
-              <span className="text-2xl md:text-3xl text-muted-foreground font-light">builder</span>
-              <div className="w-1 h-8 bg-primary"></div>
-              <span className="text-2xl md:text-3xl text-muted-foreground font-light">philosopher</span>
-              <div className="w-1 h-8 bg-primary"></div>
-              <span className="text-2xl md:text-3xl text-muted-foreground font-light">investor</span>
-            </div>
-          </div>
-          
-          {/* Quote with typing animation */}
-          <SectionCard className="mb-12 text-center max-w-4xl mx-auto">
-            <blockquote className="text-xl md:text-2xl leading-relaxed font-light text-foreground italic min-h-[120px]">
-              "{quoteDisplay}"
-              {!quoteComplete && <span className="animate-pulse text-primary">|</span>}
-              {quoteComplete && (
-                <footer className="mt-6 text-muted-foreground text-lg not-italic">
-                  — Walter Isaacson, Steve Jobs
-                </footer>
-              )}
-            </blockquote>
-          </SectionCard>
-
-          {/* Intro paragraph */}
-          {quoteComplete && (
-            <SectionCard className="animate-fade-in">
-              <p className="text-lg md:text-xl leading-relaxed text-muted-foreground text-center min-h-[100px]">
-                {introDisplay}
-                {!introComplete && <span className="animate-pulse text-primary">|</span>}
-              </p>
-            </SectionCard>
-          )}
-        </header>
 
         {/* Previously Section */}
         <section className={`mb-24 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -96,19 +82,19 @@ const Index = () => {
           </div>
           <SectionCard accent="blue">
             <div className="space-y-6 text-muted-foreground">
-              <PersonalityBullet>
+              <PersonalityBullet hoverColor="hsl(211, 100%, 62%)">
                 Built technology investments at <a href="https://www.auctorgroup.com/" target="_blank" rel="noopener noreferrer" className="text-foreground font-medium hover:text-blue-400 transition-colors duration-200">Auctor</a>
               </PersonalityBullet>
-              <PersonalityBullet>
+              <PersonalityBullet hoverColor="hsl(211, 100%, 62%)">
                 Defense private equity at <a href="https://www.stellexcapital.com/" target="_blank" rel="noopener noreferrer" className="text-foreground font-medium hover:text-blue-400 transition-colors duration-200">Stellex</a>
               </PersonalityBullet>
-              <PersonalityBullet>
+              <PersonalityBullet hoverColor="hsl(211, 100%, 62%)">
                 Technology research at <a href="https://www.ubs.com/ch/en/microsites/ubs-acquisition-of-credit-suisse.html" target="_blank" rel="noopener noreferrer" className="text-foreground font-medium hover:text-blue-400 transition-colors duration-200">Credit Suisse</a> (top 0.5% globally in their coding challenge)
               </PersonalityBullet>
-              <PersonalityBullet>
+              <PersonalityBullet hoverColor="hsl(211, 100%, 62%)">
                 Credit Suisse Scholar (full academic scholarship)
               </PersonalityBullet>
-              <PersonalityBullet>
+              <PersonalityBullet hoverColor="hsl(211, 100%, 62%)">
                 Started at <a href="https://www.cam.ac.uk/" target="_blank" rel="noopener noreferrer" className="text-foreground font-medium hover:text-blue-400 transition-colors duration-200">Cambridge</a> studying law, art history & philosophy—dropped out to build
               </PersonalityBullet>
             </div>
@@ -171,12 +157,12 @@ const Index = () => {
             </p>
             
             <div className="grid gap-5">
-              <PersonalityBullet>Identifying outlier talent before everyone else notices</PersonalityBullet>
-              <PersonalityBullet>Frameworks for monopoly formation (the good kind)</PersonalityBullet>
-              <PersonalityBullet>Why institutional deployment patterns matter more than technology</PersonalityBullet>
-              <PersonalityBullet>Cognitive biases in adoption cycles—and how to exploit them</PersonalityBullet>
-              <PersonalityBullet>Historical precedents in technology waves</PersonalityBullet>
-              <PersonalityBullet>Macroeconomic forces that create innovation windows</PersonalityBullet>
+              <PersonalityBullet hoverColor="hsl(259, 44%, 54%)">Identifying outlier talent before everyone else notices</PersonalityBullet>
+              <PersonalityBullet hoverColor="hsl(259, 44%, 54%)">Frameworks for monopoly formation (the good kind)</PersonalityBullet>
+              <PersonalityBullet hoverColor="hsl(259, 44%, 54%)">Why institutional deployment patterns matter more than technology</PersonalityBullet>
+              <PersonalityBullet hoverColor="hsl(259, 44%, 54%)">Cognitive biases in adoption cycles—and how to exploit them</PersonalityBullet>
+              <PersonalityBullet hoverColor="hsl(259, 44%, 54%)">Historical precedents in technology waves</PersonalityBullet>
+              <PersonalityBullet hoverColor="hsl(259, 44%, 54%)">Macroeconomic forces that create innovation windows</PersonalityBullet>
             </div>
           </SectionCard>
         </section>
@@ -190,16 +176,16 @@ const Index = () => {
           </div>
           <SectionCard accent="purple">
             <div className="grid gap-5">
-              <PersonalityBullet>
+              <PersonalityBullet hoverColor="hsl(259, 44%, 54%)">
                 Tracing how the Medici patronage system was basically the first VC model
               </PersonalityBullet>
-              <PersonalityBullet>
+              <PersonalityBullet hoverColor="hsl(259, 44%, 54%)">
                 Arguing that Rothko's color field paintings are systematic studies in visual cognition (fight me)
               </PersonalityBullet>
-              <PersonalityBullet>
+              <PersonalityBullet hoverColor="hsl(259, 44%, 54%)">
                 Reading sci-fi that predicted today's regulatory battles—Asimov's Foundation series → EU AI Act
               </PersonalityBullet>
-              <PersonalityBullet>
+              <PersonalityBullet hoverColor="hsl(259, 44%, 54%)">
                 Wondering why people think current institutional power structures are "new" when they follow 500-year-old patterns
               </PersonalityBullet>
             </div>
