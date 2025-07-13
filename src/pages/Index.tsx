@@ -52,6 +52,7 @@ const Index = () => {
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-background/20" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background via-background/70 to-transparent" />
         
         <div className="relative z-10 px-8 max-w-2xl ml-8 md:ml-16">
           <h1 className="text-5xl md:text-7xl font-light tracking-tight text-foreground mb-4 leading-tight">
