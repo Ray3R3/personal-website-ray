@@ -19,8 +19,8 @@ const SectionCard = ({ children, className = '', accent }: SectionCardProps) => 
   return (
     <div 
       className={cn(
-        'bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-8 transition-all duration-500 ease-out',
-        'hover:bg-card/70 hover:shadow-2xl hover:scale-[1.02] hover:-translate-y-1',
+        'bg-card/20 backdrop-blur-sm border border-border/20 rounded-lg p-8 transition-all duration-500 ease-out',
+        'hover:bg-card/30 hover:shadow-xl hover:border-border/40 hover:scale-[1.01] hover:-translate-y-0.5',
         accent && accentColors[accent],
         className
       )}
