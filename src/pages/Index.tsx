@@ -6,16 +6,18 @@ import PersonalityBullet from '../components/PersonalityBullet';
 import AnimatedParticles from '../components/AnimatedParticles';
 
 const QuoteTyping = () => {
-  const quoteText = "Edwin Land of Polaroid talked about the intersection of the humanities and science. I like that intersection. There's something magical about that place.";
-  const { displayText } = useTypingAnimation(quoteText, 30);
+  const quoteText = "The people in the computer industry who are most successful are those who have lived in many different worlds — the humanities and the sciences, arts and technology. It's that intersection that produces the most innovative solutions.";
+  const citationText = "— Walter Isaacson, Steve Jobs";
+  const { displayText: quoteDisplay, isComplete: quoteComplete } = useTypingAnimation(quoteText, 30);
+  const { displayText: citationDisplay } = useTypingAnimation(quoteComplete ? citationText : "", 30);
   
   return (
     <div className="max-w-3xl mb-16">
       <blockquote className="text-xl md:text-2xl text-foreground/90 italic leading-relaxed font-light text-left">
-        "{displayText}"
+        "{quoteDisplay}"
       </blockquote>
       <cite className="block text-muted-foreground mt-4 text-base font-normal not-italic text-left">
-        — Walter Isaacson, Steve Jobs
+        {citationDisplay}
       </cite>
     </div>
   );
@@ -46,7 +48,7 @@ const Index = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url(/lovable-uploads/9065d938-4080-4a30-82c5-71d998633f42.png)`,
+            backgroundImage: `url(/lovable-uploads/618d0172-f7d4-4f24-bfbb-54b7f37a1d7c.png)`,
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-background/20" />
