@@ -53,6 +53,14 @@ const ArchitectureOfAttention = () => {
 
             <p>Consider the difference between reading a book in a library versus scrolling through social media. Same brain, same person, radically different cognitive outcomes. The difference isn't in the content consumed but in the environmental architecture that frames the consumption.</p>
 
+            <div className="aspect-video mb-8 rounded-lg overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1518005020951-eccb494ad742" 
+                alt="Modern glass building architecture"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
             <p>Digital environments are not neutral containers for information—they're active participants in the meaning-making process. The notification system that fragments your attention, the algorithm that curates your feed, the interface that presents information in bite-sized chunks: these are architectural choices that shape cognition.</p>
 
             <p>Most discussions about digital technology focus on content moderation or data privacy. These are important, but they miss the deeper point: the structure of information environments determines the structure of thought. We're not just consuming information differently—we're thinking differently.</p>
@@ -60,6 +68,14 @@ const ArchitectureOfAttention = () => {
             <p>This has profound implications for how we coordinate as a society. Democratic discourse, scientific collaboration, cultural creation—all depend on shared cognitive frameworks. When information environments fragment attention and encourage reactive rather than reflective thinking, the quality of collective intelligence degrades.</p>
 
             <p>But here's the opportunity: if environments shape cognition, then intentionally designed environments can enhance it. The question isn't whether technology shapes thought—it's whether we'll be intentional about how it does so.</p>
+
+            <div className="aspect-video mb-8 rounded-lg overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6" 
+                alt="Code on computer screen"
+                className="w-full h-full object-cover"
+              />
+            </div>
 
             <p>The most important design decisions of the next decade won't be about user interface or user experience in the traditional sense. They'll be about cognitive architecture: How do we design information environments that support deep thinking? How do we create digital spaces that enhance rather than fragment attention?</p>
 

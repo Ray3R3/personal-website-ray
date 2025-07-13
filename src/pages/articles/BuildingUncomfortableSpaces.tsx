@@ -53,6 +53,14 @@ const BuildingUncomfortableSpaces = () => {
             
             <p>Everyone wants to build software. It's clean, scalable, and the feedback loops are immediate. But the most defensible businesses I've seen exist at the intersection of atoms and bits, where the barriers to entry aren't just about better code—they're about better relationships with regulators, deeper understanding of compliance frameworks, and the patience to deploy capital over years, not months.</p>
 
+            <div className="aspect-video mb-8 rounded-lg overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475" 
+                alt="Technology circuit board"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
             <p>Consider the defense technology renaissance. Companies like Palantir, Anduril, and Shield AI didn't succeed because they built better algorithms (though they did). They succeeded because they understood how to sell to institutions that had been buying the same solutions for decades. They built technology that worked within existing procurement processes while fundamentally transforming what was possible.</p>
 
             <p>This is what I call "Trojan Horse innovation"—appearing compatible with existing systems while quietly revolutionizing them from within. It requires a different kind of founder: one who can speak both languages, technical and institutional, and who sees regulatory complexity not as a bug but as a feature that keeps competition away.</p>
@@ -60,6 +68,14 @@ const BuildingUncomfortableSpaces = () => {
             <p>The opportunity space is vast. Financial infrastructure that central banks trust. Manufacturing processes that work in extreme environments. Energy systems that don't need subsidies. Transportation networks that can scale across continents. These aren't software problems—they're systems problems that happen to include software.</p>
 
             <p>The uncomfortable truth is that breakthrough innovation often looks boring from the outside. It's not disruption in the Valley sense—it's infiltration. Building what looks like a better version of something that already exists, but with architecture that enables completely new possibilities.</p>
+
+            <div className="aspect-video mb-8 rounded-lg overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1497604401993-f2e922e5cb0a" 
+                alt="Modern office building architecture"
+                className="w-full h-full object-cover"
+              />
+            </div>
 
             <p>The founders who succeed in these spaces share certain characteristics: they're comfortable with ambiguity, patient with long sales cycles, and sophisticated about regulatory environments. They understand that moats aren't just about network effects or data advantages—they're about institutional relationships and regulatory positioning.</p>
 

@@ -53,6 +53,14 @@ const MediciModel = () => {
 
             <p>Cosimo de' Medici didn't just fund artists. He created a salon culture where mathematicians talked to architects, philosophers debated with engineers, and artists collaborated with inventors. The result wasn't just great art—it was technological revolution. Brunelleschi's dome, Leonardo's machines, Galileo's observations. Innovation at the intersection.</p>
 
+            <div className="aspect-video mb-8 rounded-lg overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" 
+                alt="Collaborative workspace"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
             <p>Modern venture capital operates with portfolio theory derived from financial markets, but the Medici model suggests a different approach: creating dense networks of exceptional individuals and letting serendipity work at scale. Instead of betting on individual companies, bet on clusters of capability that reinforce each other.</p>
 
             <p>This is why geographic density matters in venture capital. It's not just about knowledge spillovers—it's about creating conditions for systematic serendipity. When Andreessen Horowitz talks about building community, they're unconsciously recreating Medici salon dynamics at scale.</p>
@@ -60,6 +68,14 @@ const MediciModel = () => {
             <p>But here's what most people miss: the Medici weren't passive funders. They were active curators of talent and ideas. They created artificial scarcity around access to their networks, which increased the value of membership. They understood that exclusivity isn't elitism—it's network engineering.</p>
 
             <p>The parallel to modern venture is clear. The best firms aren't just capital allocators—they're network architects. They create systematic opportunities for their portfolio companies to collaborate, compete, and cross-pollinate. They understand that the value of the network grows exponentially with the quality of its nodes.</p>
+
+            <div className="aspect-video mb-8 rounded-lg overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1466442929976-97f336a657be" 
+                alt="Renaissance architecture"
+                className="w-full h-full object-cover"
+              />
+            </div>
 
             <p>This suggests a different model for institutional capital deployment: instead of diversifying across uncorrelated assets, concentrate on creating dense networks of correlated capabilities. Fund not just companies, but entire technological ecosystems. Build not just portfolio companies, but innovation communities.</p>
 
