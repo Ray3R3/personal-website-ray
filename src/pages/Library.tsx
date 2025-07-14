@@ -344,26 +344,37 @@ const Library = () => {
               Currently Reading
             </h2>
             <div className="flex justify-center">
-              <div 
-                className="max-w-md bg-card rounded-lg p-8 shadow-lg border border-border/20 transform hover:scale-105 transition-transform duration-300 cursor-pointer"
-                onClick={() => setSelectedBook(currentlyReading)}
-              >
-                <div className="aspect-[3/4] mb-6 overflow-hidden rounded-lg">
-                  <img 
-                    src={currentlyReading.image} 
-                    alt={currentlyReading.title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+              <div className="flex flex-col items-center">
                 <div 
-                  className="transform transition-transform duration-700"
+                  className="relative w-48 h-48 mb-8 cursor-pointer transform transition-all duration-300 hover:scale-105"
+                  onClick={() => setSelectedBook(currentlyReading)}
+                >
+                  {/* Circular background */}
+                  <div className={`absolute inset-0 rounded-full ${
+                    currentlyReading.type === 'fiction' 
+                      ? 'bg-gradient-to-br from-purple-500/30 to-purple-600/40' 
+                      : 'bg-gradient-to-br from-blue-500/30 to-blue-600/40'
+                  } shadow-lg backdrop-blur-sm border border-border/30`}></div>
+                  
+                  {/* Book cover */}
+                  <div className="absolute inset-4 rounded-full overflow-hidden shadow-inner">
+                    <img 
+                      src={currentlyReading.image} 
+                      alt={currentlyReading.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+                
+                <div 
+                  className="text-center max-w-md transform transition-transform duration-700"
                   style={{ transform: `translateX(${Math.sin(scrollY * 0.01) * 5}px)` }}
                 >
                   <h3 className="text-xl font-medium text-foreground mb-2">
                     {currentlyReading.title}
                   </h3>
                   <p className="text-muted-foreground mb-2">{currentlyReading.author}</p>
-                  <div className="flex items-center gap-2 mb-3">
+                  <div className="flex items-center justify-center gap-2 mb-3">
                     <span className="text-sm text-muted-foreground/80">{currentlyReading.category}</span>
                     <span className={`text-xs px-2 py-1 rounded-full ${
                       currentlyReading.type === 'fiction' 
@@ -446,29 +457,42 @@ const Library = () => {
           
           <div 
             ref={scrollContainerRef}
-            className="flex gap-6 overflow-x-auto scrollbar-hide pb-4"
+            className="flex gap-8 overflow-x-auto scrollbar-hide pb-4"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {filteredBooks.map((book, index) => (
               <div 
                 key={book.id}
-                className="flex-none w-72 bg-card rounded-lg p-6 shadow-lg border border-border/20 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer"
+                className="flex-none flex flex-col items-center cursor-pointer transform transition-all duration-300 hover:scale-105"
                 style={{
                   transform: `translateY(${Math.sin((scrollY + index * 100) * 0.005) * 3}px) scale(${1 + Math.sin((scrollY + index * 50) * 0.003) * 0.02})`,
-                  transition: 'transform 0.1s ease-out, box-shadow 0.3s ease-out'
+                  transition: 'transform 0.1s ease-out'
                 }}
                 onClick={() => setSelectedBook(book)}
               >
-                <div className="aspect-[3/4] mb-4 overflow-hidden rounded-lg">
-                  <img 
-                    src={book.image} 
-                    alt={book.title}
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                  />
+                {/* Circular container */}
+                <div className="relative w-36 h-36 mb-4">
+                  {/* Circular background */}
+                  <div className={`absolute inset-0 rounded-full ${
+                    book.type === 'fiction' 
+                      ? 'bg-gradient-to-br from-purple-500/30 to-purple-600/40' 
+                      : 'bg-gradient-to-br from-blue-500/30 to-blue-600/40'
+                  } shadow-lg backdrop-blur-sm border border-border/30`}></div>
+                  
+                  {/* Book cover */}
+                  <div className="absolute inset-3 rounded-full overflow-hidden shadow-inner">
+                    <img 
+                      src={book.image} 
+                      alt={book.title}
+                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
                 </div>
-                <div>
+                
+                {/* Book details */}
+                <div className="text-center w-40">
                   <h3 
-                    className="text-lg font-medium text-foreground mb-2 leading-tight"
+                    className="text-sm font-medium text-foreground mb-2 leading-tight line-clamp-2"
                     style={{
                       transform: `translateX(${Math.sin((scrollY + index * 50) * 0.008) * 2}px)`,
                       transition: 'transform 0.1s ease-out'
@@ -476,8 +500,8 @@ const Library = () => {
                   >
                     {book.title}
                   </h3>
-                  <p className="text-muted-foreground mb-2 text-sm">{book.author}</p>
-                  <div className="flex items-center gap-2 mb-3">
+                  <p className="text-xs text-muted-foreground mb-2">{book.author}</p>
+                  <div className="flex flex-col items-center gap-1">
                     <span className="text-xs text-muted-foreground/80">{book.category}</span>
                     <span className={`text-xs px-2 py-1 rounded-full ${
                       book.type === 'fiction' 
@@ -487,9 +511,6 @@ const Library = () => {
                       {book.type}
                     </span>
                   </div>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
-                    {book.description}
-                  </p>
                 </div>
               </div>
             ))}
