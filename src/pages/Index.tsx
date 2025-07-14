@@ -85,7 +85,7 @@ const Index = () => {
 
           {/* Refined Intro */}
           <div className="text-base md:text-lg text-muted-foreground leading-relaxed">
-            I find exceptional builders and back them—often in the uncomfortable spaces where capital intensity meets regulatory complexity, where others see barriers but I see moats. My interests span the systematic forces that create breakthrough companies and the outlier individuals who ignore conventional wisdom to build them.
+            I study how exceptional people build things that matter. Most interesting problems exist at the intersection of multiple domains—where technology meets institutions, where capital meets complexity, where new models challenge old systems.
           </div>
           </div>
           
