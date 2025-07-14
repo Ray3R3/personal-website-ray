@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ChevronDown, ChevronUp } from 'lucide-react';
 
 interface Book {
   id: number;
@@ -138,6 +138,7 @@ const books: Book[] = [
 const Library = () => {
   const [scrollY, setScrollY] = useState(0);
   const [filter, setFilter] = useState<'all' | 'fiction' | 'non-fiction'>('all');
+  const [showCompleteCollection, setShowCompleteCollection] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   
   const currentlyReading = books.find(book => book.status === 'reading');
@@ -221,7 +222,11 @@ const Library = () => {
                   <p className="text-muted-foreground mb-2">{currentlyReading.author}</p>
                   <div className="flex items-center gap-2 mb-3">
                     <span className="text-sm text-muted-foreground/80">{currentlyReading.category}</span>
-                    <span className="text-xs bg-primary/20 text-primary px-2 py-1 rounded-full">
+                    <span className={`text-xs px-2 py-1 rounded-full ${
+                      currentlyReading.type === 'fiction' 
+                        ? 'bg-purple-500/20 text-purple-400' 
+                        : 'bg-blue-500/20 text-blue-400'
+                    }`}>
                       {currentlyReading.type}
                     </span>
                   </div>
@@ -330,7 +335,11 @@ const Library = () => {
                   <p className="text-muted-foreground mb-2 text-sm">{book.author}</p>
                   <div className="flex items-center gap-2 mb-3">
                     <span className="text-xs text-muted-foreground/80">{book.category}</span>
-                    <span className="text-xs bg-primary/20 text-primary px-2 py-1 rounded-full">
+                    <span className={`text-xs px-2 py-1 rounded-full ${
+                      book.type === 'fiction' 
+                        ? 'bg-purple-500/20 text-purple-400' 
+                        : 'bg-blue-500/20 text-blue-400'
+                    }`}>
                       {book.type}
                     </span>
                   </div>
@@ -344,32 +353,50 @@ const Library = () => {
         </div>
       </section>
 
-      {/* Full Grid View */}
+      {/* Complete Collection - Collapsible */}
       <section className="py-16 px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl font-light tracking-wide text-foreground mb-8 text-center opacity-60">
-            Complete Collection
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-            {filteredBooks.map((book, index) => (
-              <div 
-                key={`grid-${book.id}`}
-                className="bg-card/50 rounded-lg p-4 border border-border/10 hover:border-border/30 transition-all duration-300 transform hover:scale-105"
-              >
-                <div className="aspect-[3/4] mb-3 overflow-hidden rounded-lg">
-                  <img 
-                    src={book.image} 
-                    alt={book.title}
-                    className="w-full h-full object-cover"
-                  />
+          <button
+            onClick={() => setShowCompleteCollection(!showCompleteCollection)}
+            className="flex items-center justify-center gap-3 w-full text-2xl font-light tracking-wide text-foreground mb-8 opacity-60 hover:opacity-100 transition-opacity duration-300"
+          >
+            <span>Complete Collection</span>
+            {showCompleteCollection ? (
+              <ChevronUp className="w-5 h-5" />
+            ) : (
+              <ChevronDown className="w-5 h-5" />
+            )}
+          </button>
+          
+          {showCompleteCollection && (
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 animate-fade-in">
+              {filteredBooks.map((book, index) => (
+                <div 
+                  key={`grid-${book.id}`}
+                  className="bg-card/50 rounded-lg p-4 border border-border/10 hover:border-border/30 transition-all duration-300 transform hover:scale-105"
+                >
+                  <div className="aspect-[3/4] mb-3 overflow-hidden rounded-lg">
+                    <img 
+                      src={book.image} 
+                      alt={book.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h4 className="text-sm font-medium text-foreground mb-1 leading-tight line-clamp-2">
+                    {book.title}
+                  </h4>
+                  <p className="text-xs text-muted-foreground mb-2">{book.author}</p>
+                  <span className={`text-xs px-2 py-1 rounded-full ${
+                    book.type === 'fiction' 
+                      ? 'bg-purple-500/20 text-purple-400' 
+                      : 'bg-blue-500/20 text-blue-400'
+                  }`}>
+                    {book.type}
+                  </span>
                 </div>
-                <h4 className="text-sm font-medium text-foreground mb-1 leading-tight line-clamp-2">
-                  {book.title}
-                </h4>
-                <p className="text-xs text-muted-foreground">{book.author}</p>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
