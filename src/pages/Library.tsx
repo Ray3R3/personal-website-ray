@@ -1,5 +1,29 @@
 import { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, ChevronDown, ChevronUp } from 'lucide-react';
+import BookDetailModal from '../components/BookDetailModal';
+
+// Import book cover images
+import scytheImage from '../assets/book-covers/scythe.jpg';
+import magiciansImage from '../assets/book-covers/the-magicians.jpg';
+import nameOfWindImage from '../assets/book-covers/name-of-wind.jpg';
+import assassinsApprenticeImage from '../assets/book-covers/assassins-apprentice.jpg';
+import neuromancerImage from '../assets/book-covers/neuromancer.jpg';
+import braintrustImage from '../assets/book-covers/braintrust.jpg';
+import beginningInfinityImage from '../assets/book-covers/beginning-infinity.jpg';
+import godelEscherBachImage from '../assets/book-covers/godel-escher-bach.jpg';
+import zenMotorcycleImage from '../assets/book-covers/zen-motorcycle.jpg';
+import storyOfArtImage from '../assets/book-covers/story-of-art.jpg';
+import sapiensImage from '../assets/book-covers/sapiens.jpg';
+import treasureIslandsImage from '../assets/book-covers/treasure-islands.jpg';
+import codeImage from '../assets/book-covers/code.jpg';
+import hackersImage from '../assets/book-covers/hackers.jpg';
+import mythicalManMonthImage from '../assets/book-covers/mythical-man-month.jpg';
+import shoeDogImage from '../assets/book-covers/shoe-dog.jpg';
+import competitiveStrategyImage from '../assets/book-covers/competitive-strategy.jpg';
+import deadCompaniesImage from '../assets/book-covers/dead-companies.jpg';
+import dreamsFatherImage from '../assets/book-covers/dreams-father.jpg';
+import billionDollarsImage from '../assets/book-covers/billion-dollars.jpg';
+import syntheticIntelligenceImage from '../assets/book-covers/synthetic-intelligence.jpg';
 
 interface Book {
   id: number;
@@ -10,128 +34,243 @@ interface Book {
   type: 'fiction' | 'non-fiction';
   image: string;
   description: string;
+  thoughts: string;
 }
 
 const books: Book[] = [
+  // Fiction
   {
     id: 1,
-    title: "The Structure of Scientific Revolutions",
-    author: "Thomas S. Kuhn",
+    title: "Scythe",
+    author: "Neal Shusterman",
     status: "read",
-    category: "Philosophy of Science",
-    type: "non-fiction",
-    image: "/lovable-uploads/02c320e6-f01e-40c5-ab9c-6cac9688a0ec.png",
-    description: "How scientific paradigms shift and what it means for breakthrough innovation."
+    category: "Dystopian Sci-Fi",
+    type: "fiction",
+    image: scytheImage,
+    description: "Dystopian sci-fi that wrestles with ethics, technology, and what it means to be human.",
+    thoughts: "Shusterman brilliantly explores the institutional mechanics of power when death becomes optional. The concept of 'scythes' as necessary agents of population control mirrors how breakthrough technologies often require new institutional frameworks. It's a masterclass in how ethical systems must evolve alongside technological capability—directly relevant to how we think about AI governance and the architecture of future decision-making systems."
   },
   {
     id: 2,
-    title: "Foundation",
-    author: "Isaac Asimov",
+    title: "The Magicians",
+    author: "Lev Grossman",
     status: "reading",
-    category: "Science Fiction",
+    category: "Modern Fantasy",
     type: "fiction",
-    image: "/lovable-uploads/0b1ff97e-2062-4113-883f-01359307aedb.png",
-    description: "Psychohistory and the mathematics of civilization collapse and renewal."
+    image: magiciansImage,
+    description: "Modern fantasy exploring power, disillusionment, and the search for meaning.",
+    thoughts: "What happens when you get everything you thought you wanted? Grossman deconstructs the fantasy of mastery and expertise, showing how technical competence doesn't automatically translate to wisdom or fulfillment. This resonates deeply with Silicon Valley culture and the mythology of disruption—the book exposes the gap between capability and purpose that drives so much institutional dysfunction."
   },
   {
     id: 3,
-    title: "The Medici Effect",
-    author: "Frans Johansson",
+    title: "The Name of the Wind",
+    author: "Patrick Rothfuss",
     status: "read",
-    category: "Innovation",
-    type: "non-fiction",
-    image: "/lovable-uploads/2bdbc61c-1813-4c03-b2a2-89c224d65fa4.png",
-    description: "How breakthrough ideas emerge at the intersection of disciplines."
+    category: "Epic Fantasy",
+    type: "fiction",
+    image: nameOfWindImage,
+    description: "Beautifully crafted fantasy about storytelling, knowledge, and ambition.",
+    thoughts: "Rothfuss understands that knowledge acquisition isn't just about facts—it's about developing cognitive frameworks that allow you to see patterns others miss. Kvothe's journey through the University mirrors how breakthrough thinking emerges from interdisciplinary collision. The magic system based on understanding true names reflects how mastery comes from grasping underlying principles rather than surface techniques."
   },
   {
     id: 4,
-    title: "Zero to One",
-    author: "Peter Thiel",
+    title: "Assassin's Apprentice",
+    author: "Robin Hobb",
     status: "read",
-    category: "Business",
-    type: "non-fiction",
-    image: "/lovable-uploads/40a96855-c9b0-49cf-b573-998cd979be56.png",
-    description: "Notes on startups and building monopolies that create value."
+    category: "Royal Fantasy",
+    type: "fiction",
+    image: assassinsApprenticeImage,
+    description: "Fantasy classic mixing royal intrigue, loyalty, and coming-of-age journeys.",
+    thoughts: "Hobb's exploration of institutional loyalty vs personal ethics anticipates many modern dilemmas about organizational culture. Fitz's position as both insider and outsider mirrors the role of institutional entrepreneurs—those who must navigate existing power structures while working to transform them. The magic system based on emotional bonds reflects how real influence operates through relationship networks, not formal authority."
   },
   {
     id: 5,
-    title: "The Art of War",
-    author: "Sun Tzu",
-    status: "read",
-    category: "Strategy",
-    type: "non-fiction",
-    image: "/lovable-uploads/618d0172-f7d4-4f24-bfbb-54b7f37a1d7c.png",
-    description: "Strategic thinking that applies to business and institutional navigation."
-  },
-  {
-    id: 6,
-    title: "Ways of Seeing",
-    author: "John Berger",
-    status: "read",
-    category: "Art Theory",
-    type: "non-fiction",
-    image: "/lovable-uploads/6f7e419a-cada-4358-9f77-78a2da5626b4.png",
-    description: "How we perceive visual culture and what it reveals about power structures."
-  },
-  {
-    id: 7,
-    title: "The Sovereign Individual",
-    author: "James Dale Davidson",
-    status: "read",
-    category: "Economics",
-    type: "non-fiction",
-    image: "/lovable-uploads/77682d7c-a923-4df3-9e0c-2a4f0b449d28.png",
-    description: "How technology transforms governance and individual autonomy."
-  },
-  {
-    id: 8,
-    title: "Antifragile",
-    author: "Nassim Nicholas Taleb",
-    status: "read",
-    category: "Risk",
-    type: "non-fiction",
-    image: "/lovable-uploads/7a8d8dd1-3036-4be0-a743-9050f9ab2ebd.png",
-    description: "Systems that gain from disorder and how to build resilient structures."
-  },
-  {
-    id: 9,
-    title: "The Innovator's Dilemma",
-    author: "Clayton M. Christensen",
-    status: "read",
-    category: "Innovation",
-    type: "non-fiction",
-    image: "/lovable-uploads/9065d938-4080-4a30-82c5-71d998633f42.png",
-    description: "Why successful companies fail and how disruptive innovation works."
-  },
-  {
-    id: 10,
-    title: "Gödel, Escher, Bach",
-    author: "Douglas Hofstadter",
-    status: "read",
-    category: "Cognitive Science",
-    type: "non-fiction",
-    image: "/lovable-uploads/a8d0c9f1-8b95-4207-870d-2f03a99ac1f6.png",
-    description: "An eternal golden braid connecting mathematics, art, and consciousness."
-  },
-  {
-    id: 11,
     title: "Neuromancer",
     author: "William Gibson",
     status: "read",
     category: "Cyberpunk",
     type: "fiction",
-    image: "/lovable-uploads/02c320e6-f01e-40c5-ab9c-6cac9688a0ec.png",
-    description: "The novel that defined cyberpunk and digital consciousness."
+    image: neuromancerImage,
+    description: "Cyberpunk's foundational text, mixing tech speculation, noir, and dazzling prose.",
+    thoughts: "Gibson didn't just predict the internet—he understood how technology would reshape consciousness itself. The novel's vision of corporate-dominated virtual spaces feels prophetic today. More importantly, it shows how breakthrough technologies don't just solve problems; they create entirely new categories of human experience. Essential reading for understanding how digital systems become cognitive extensions."
+  },
+  
+  // Non-Fiction
+  {
+    id: 6,
+    title: "Braintrust: What Neuroscience Tells Us About Morality",
+    author: "Patricia Churchland",
+    status: "read",
+    category: "Neurophilosophy",
+    type: "non-fiction",
+    image: braintrustImage,
+    description: "Neurophilosophy's challenge to ethics and the nature of moral thought.",
+    thoughts: "Churchland demolishes the idea that moral reasoning happens in some ethereal realm separate from biology. Her work shows how cooperation and ethical behavior emerge from evolutionary pressures and neural architecture. This has profound implications for institutional design—instead of imposing abstract moral frameworks, we should design systems that align with how human psychology actually works."
+  },
+  {
+    id: 7,
+    title: "The Beginning of Infinity",
+    author: "David Deutsch",
+    status: "read",
+    category: "Physics & Philosophy",
+    type: "non-fiction",
+    image: beginningInfinityImage,
+    description: "Radical optimism about knowledge, progress, and the possibility of solving any problem.",
+    thoughts: "Deutsch's central insight—that all evil is due to insufficient knowledge—reframes every institutional failure as an epistemological problem. His vision of knowledge as infinite and improvable provides the philosophical foundation for breakthrough thinking. The book shows why certain types of systems can continue improving indefinitely while others hit fundamental limits."
+  },
+  {
+    id: 8,
+    title: "Gödel, Escher, Bach",
+    author: "Douglas Hofstadter",
+    status: "read",
+    category: "Consciousness & Logic",
+    type: "non-fiction",
+    image: godelEscherBachImage,
+    description: "A cult classic on self-reference, logic, art, and consciousness.",
+    thoughts: "Hofstadter reveals how complex systems develop emergent properties through self-reference and recursive loops. This is the key to understanding how breakthrough innovations emerge—they often involve systems that can model and modify themselves. The book's exploration of strange loops illuminates how institutions can evolve beyond their original design constraints."
+  },
+  {
+    id: 9,
+    title: "Zen and the Art of Motorcycle Maintenance",
+    author: "Robert Pirsig",
+    status: "read",
+    category: "Philosophy",
+    type: "non-fiction",
+    image: zenMotorcycleImage,
+    description: "Philosophical inquiry into quality, craftsmanship, and meaning.",
+    thoughts: "Pirsig's concept of 'Quality' as the source of all value resonates with anyone who's tried to build something excellent. His distinction between classical and romantic understanding maps perfectly onto the tension between systematic thinking and intuitive insight. The book argues that breakthrough work emerges when these modes complement rather than compete with each other."
+  },
+  {
+    id: 10,
+    title: "The Story of Art",
+    author: "E.H. Gombrich",
+    status: "read",
+    category: "Art History",
+    type: "non-fiction",
+    image: storyOfArtImage,
+    description: "Elegant, readable history of art, perfect for broadening creative perspective.",
+    thoughts: "Gombrich shows how artistic breakthroughs often emerge from technical constraints and cultural collision. His analysis of how artists solve visual problems parallels how innovators in any field push against limitations to create new possibilities. The progression from representation to abstraction mirrors how conceptual thinking evolves in any domain."
+  },
+  {
+    id: 11,
+    title: "Sapiens",
+    author: "Yuval Noah Harari",
+    status: "read",
+    category: "Anthropology",
+    type: "non-fiction",
+    image: sapiensImage,
+    description: "Brilliant narrative of human evolution, society, and ideas.",
+    thoughts: "Harari's insight that large-scale cooperation depends on shared fictions is crucial for understanding institutional design. Religions, corporations, and nation-states are all 'imagined orders' that become real through collective belief. This explains why breakthrough adoption often requires changing the stories people tell themselves about what's possible."
   },
   {
     id: 12,
-    title: "The Left Hand of Darkness",
-    author: "Ursula K. Le Guin",
+    title: "Treasure Islands",
+    author: "Nicholas Shaxson",
     status: "read",
-    category: "Science Fiction",
-    type: "fiction",
-    image: "/lovable-uploads/6f7e419a-cada-4358-9f77-78a2da5626b4.png",
-    description: "Gender, politics, and human nature in an alien world."
+    category: "Finance",
+    type: "non-fiction",
+    image: treasureIslandsImage,
+    description: "A dive into tax havens and the shadow world of global finance and power.",
+    thoughts: "Shaxson exposes how offshore finance creates parallel institutional systems that undermine democratic governance. His analysis reveals how complexity can be weaponized to obscure power relationships. Understanding these shadow networks is essential for anyone working on institutional change—you need to map the real power structure, not just the official one."
+  },
+  {
+    id: 13,
+    title: "Code: The Hidden Language of Computer Hardware and Software",
+    author: "Charles Petzold",
+    status: "read",
+    category: "Computer Science",
+    type: "non-fiction",
+    image: codeImage,
+    description: "A cult favorite among programmers, demystifying how computers truly work, from Morse code to modern systems. Clear, fascinating, and timeless.",
+    thoughts: "Petzold builds understanding from first principles, showing how complex systems emerge from simple rules. His progression from telegraph codes to microprocessors demonstrates how breakthrough technologies often involve finding elegant abstractions that hide complexity while preserving functionality. Essential for understanding how digital systems can augment human cognition."
+  },
+  {
+    id: 14,
+    title: "Hackers: Heroes of the Computer Revolution",
+    author: "Steven Levy",
+    status: "read",
+    category: "Technology History",
+    type: "non-fiction",
+    image: hackersImage,
+    description: "A fun, vivid history of hacker culture and the spirit of creative coding.",
+    thoughts: "Levy captures the hacker ethic of building for the joy of building—a mindset that prioritizes elegance and functionality over profit. This culture produced many of our most transformative technologies precisely because it was driven by intrinsic rather than extrinsic motivation. The book shows how breakthrough innovation often emerges from communities organized around craft rather than commerce."
+  },
+  {
+    id: 15,
+    title: "The Mythical Man-Month",
+    author: "Frederick P. Brooks Jr.",
+    status: "read",
+    category: "Software Engineering",
+    type: "non-fiction",
+    image: mythicalManMonthImage,
+    description: "A technical cult classic. Lessons about software engineering, project management, and why adding people to a late project makes it later. Still quoted decades later.",
+    thoughts: "Brooks' insights about communication overhead and system complexity apply far beyond software. His observation that 'adding manpower to a late project makes it later' reveals fundamental truths about how knowledge work scales. The book's enduring relevance proves that some principles of institutional design are invariant across technological paradigms."
+  },
+  {
+    id: 16,
+    title: "Shoe Dog",
+    author: "Phil Knight",
+    status: "read",
+    category: "Business Memoir",
+    type: "non-fiction",
+    image: shoeDogImage,
+    description: "Instead of Principles, here's a gripping business memoir. Brilliant storytelling from the founder of Nike—about risk, vision, and the chaotic path of building.",
+    thoughts: "Knight's story reveals how breakthrough businesses often emerge from a combination of obsession, improvisation, and willingness to operate in constant crisis mode. Nike's early years show how companies can succeed by getting the culture right even when everything else is chaos. The book demonstrates how narrative and meaning-making are as important as strategy in building enduring institutions."
+  },
+  {
+    id: 17,
+    title: "Competitive Strategy",
+    author: "Michael Porter",
+    status: "read",
+    category: "Business Strategy",
+    type: "non-fiction",
+    image: competitiveStrategyImage,
+    description: "The cornerstone of modern business strategy thinking. Moats, industry structure, and competitive advantage.",
+    thoughts: "Porter's framework for analyzing competitive dynamics remains foundational because it focuses on structural factors rather than tactics. His five forces model shows how to think systematically about industry evolution and defensive positioning. However, the framework works best for stable industries—breakthrough innovation often involves creating entirely new competitive landscapes where traditional analysis breaks down."
+  },
+  {
+    id: 18,
+    title: "Dead Companies Walking",
+    author: "Scott Fearon",
+    status: "read",
+    category: "Business Analysis",
+    type: "non-fiction",
+    image: deadCompaniesImage,
+    description: "A refreshingly irreverent look at how and why businesses fail, from a hedge fund manager's perspective.",
+    thoughts: "Fearon's pattern recognition around corporate failure reveals how institutions develop cognitive blind spots that prevent adaptation. His stories show how successful companies often die from their strengths—the very capabilities that created success become obstacles to necessary change. This paradox explains why breakthrough innovation often comes from outsiders rather than incumbents."
+  },
+  {
+    id: 19,
+    title: "Dreams From My Father",
+    author: "Barack Obama",
+    status: "read",
+    category: "Political Memoir",
+    type: "non-fiction",
+    image: dreamsFatherImage,
+    description: "Masterfully written memoir of identity, purpose, and ambition.",
+    thoughts: "Obama's exploration of identity formation reveals how personal narrative shapes institutional effectiveness. His ability to navigate between different cultural contexts while maintaining coherent values demonstrates the kind of cognitive flexibility required for institutional entrepreneurship. The book shows how breakthrough leadership often involves synthesizing seemingly contradictory perspectives."
+  },
+  {
+    id: 20,
+    title: "How to Turn Down a Billion Dollars",
+    author: "Billy Gallagher",
+    status: "read",
+    category: "Tech Business",
+    type: "non-fiction",
+    image: billionDollarsImage,
+    description: "Inside the rise of Snapchat — modern founder culture, startup life, and tech industry realities.",
+    thoughts: "Gallagher's Snapchat chronicle shows how breakthrough products often emerge from understanding cultural shifts that established players miss. The book reveals how young founders can succeed precisely because they're building for behavioral patterns that older decision-makers don't recognize as significant. It's a case study in how generational change drives institutional transformation."
+  },
+  {
+    id: 21,
+    title: "Principles of Synthetic Intelligence",
+    author: "Joscha Bach",
+    status: "read",
+    category: "Cognitive Science",
+    type: "non-fiction",
+    image: syntheticIntelligenceImage,
+    description: "Bach explores how minds emerge from information processing, proposing a unified model of cognition and motivation.",
+    thoughts: "Bach's framework for understanding intelligence as information processing provides a foundation for thinking about how artificial and human cognition might eventually merge. His work on motivation and goal formation is particularly relevant for institutional design—it shows how to create systems that can adapt their objectives as circumstances change. Essential reading for anyone working on AI governance or human-AI collaboration."
   }
 ];
 
@@ -139,6 +278,7 @@ const Library = () => {
   const [scrollY, setScrollY] = useState(0);
   const [filter, setFilter] = useState<'all' | 'fiction' | 'non-fiction'>('all');
   const [showCompleteCollection, setShowCompleteCollection] = useState(false);
+  const [selectedBook, setSelectedBook] = useState<Book | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   
   const currentlyReading = books.find(book => book.status === 'reading');
@@ -204,7 +344,10 @@ const Library = () => {
               Currently Reading
             </h2>
             <div className="flex justify-center">
-              <div className="max-w-md bg-card rounded-lg p-8 shadow-lg border border-border/20 transform hover:scale-105 transition-transform duration-300">
+              <div 
+                className="max-w-md bg-card rounded-lg p-8 shadow-lg border border-border/20 transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+                onClick={() => setSelectedBook(currentlyReading)}
+              >
                 <div className="aspect-[3/4] mb-6 overflow-hidden rounded-lg">
                   <img 
                     src={currentlyReading.image} 
@@ -309,11 +452,12 @@ const Library = () => {
             {filteredBooks.map((book, index) => (
               <div 
                 key={book.id}
-                className="flex-none w-72 bg-card rounded-lg p-6 shadow-lg border border-border/20 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+                className="flex-none w-72 bg-card rounded-lg p-6 shadow-lg border border-border/20 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer"
                 style={{
                   transform: `translateY(${Math.sin((scrollY + index * 100) * 0.005) * 3}px) scale(${1 + Math.sin((scrollY + index * 50) * 0.003) * 0.02})`,
                   transition: 'transform 0.1s ease-out, box-shadow 0.3s ease-out'
                 }}
+                onClick={() => setSelectedBook(book)}
               >
                 <div className="aspect-[3/4] mb-4 overflow-hidden rounded-lg">
                   <img 
@@ -373,7 +517,8 @@ const Library = () => {
               {filteredBooks.map((book, index) => (
                 <div 
                   key={`grid-${book.id}`}
-                  className="bg-card/50 rounded-lg p-4 border border-border/10 hover:border-border/30 transition-all duration-300 transform hover:scale-105"
+                  className="bg-card/50 rounded-lg p-4 border border-border/10 hover:border-border/30 transition-all duration-300 transform hover:scale-105 cursor-pointer"
+                  onClick={() => setSelectedBook(book)}
                 >
                   <div className="aspect-[3/4] mb-3 overflow-hidden rounded-lg">
                     <img 
@@ -399,6 +544,15 @@ const Library = () => {
           )}
         </div>
       </section>
+
+      {/* Book Detail Modal */}
+      {selectedBook && (
+        <BookDetailModal
+          book={selectedBook}
+          isOpen={!!selectedBook}
+          onClose={() => setSelectedBook(null)}
+        />
+      )}
 
       {/* Footer */}
       <footer className="py-16 px-8 border-t border-border/30">
