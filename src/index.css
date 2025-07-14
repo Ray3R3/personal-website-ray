@@ -253,3 +253,41 @@ a {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
+
+/* Article typography styles */
+.article-content p {
+  @apply text-lg leading-relaxed mb-6 font-light;
+  line-height: 1.75;
+}
+
+.article-content p:first-child {
+  @apply text-xl font-light leading-relaxed;
+}
+
+.article-content h2 {
+  @apply text-2xl md:text-3xl font-light tracking-tight text-foreground mt-12 mb-6;
+}
+
+.article-content h3 {
+  @apply text-xl md:text-2xl font-light tracking-tight text-foreground mt-10 mb-4;
+}
+
+.article-content blockquote {
+  @apply border-l-4 border-primary/30 pl-6 italic text-muted-foreground my-8 text-lg;
+}
+
+.article-content .article-image {
+  @apply my-12 rounded-lg overflow-hidden shadow-lg;
+}
+
+.article-content .article-image img {
+  @apply w-full h-full object-cover;
+}
+
+.article-content strong {
+  @apply font-medium text-foreground;
+}
+
+.article-content em {
+  @apply italic;
+}

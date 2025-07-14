@@ -1,86 +1,70 @@
-import { useEffect, useState } from 'react';
+import ArticleLayout from '../../components/ArticleLayout';
 
 const MythologyDisruption = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      {/* Navigation */}
-      <nav className="absolute top-8 left-8 z-20">
-        <a 
-          href="/writing" 
-          className="text-muted-foreground hover:text-foreground font-light tracking-wide transition-colors duration-200"
-        >
-          ← Back to Writing
-        </a>
-      </nav>
+    <ArticleLayout
+      title="The Mythology of Disruption"
+      date="October 15, 2023"
+      excerpt="How Silicon Valley's favorite narrative obscures the real mechanisms of technological change—and why most 'disruption' is actually institutional evolution."
+      heroImage="https://images.unsplash.com/photo-1485833077593-4278bba3f11f"
+      heroAlt="Traditional meets modern"
+    >
+      <p>
+        The disruption narrative is Silicon Valley's founding mythology, but like most mythologies, it obscures more than it reveals. The story goes: scrappy startups with better technology overthrow entrenched incumbents who were too slow to adapt. David beats Goliath. Innovation triumphs over inertia.
+      </p>
 
-      {/* Article Header */}
-      <section className="pt-32 pb-16 px-8">
-        <div className="max-w-4xl mx-auto">
-          <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <time className="text-sm text-muted-foreground font-light">
-              October 15, 2023
-            </time>
-            <h1 className="text-4xl md:text-6xl font-light tracking-tight text-foreground mt-4 mb-8 leading-tight">
-              The Mythology of Disruption
-            </h1>
-            <div className="aspect-video mb-12 rounded-lg overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1485833077593-4278bba3f11f" 
-                alt="Traditional meets modern"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <p>
+        This narrative is compelling because it casts entrepreneurs as heroes and frames technological change as a moral drama. But it's incomplete at best, misleading at worst. Most successful "disruptors" don't overthrow existing systems—they evolve within them, often with the tacit cooperation of incumbents.
+      </p>
 
-      {/* Article Content */}
-      <article className="px-8 pb-20">
-        <div className="max-w-3xl mx-auto prose prose-lg prose-invert">
-          <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <p className="text-xl text-muted-foreground mb-8 font-light leading-relaxed">
-              How Silicon Valley's favorite narrative obscures the real mechanisms of technological change—and why most 'disruption' is actually institutional evolution.
-            </p>
-            
-            <p>The mythology of disruption tells a seductive story: young entrepreneurs with revolutionary ideas overthrow established industries through pure technological innovation. It's David versus Goliath for the digital age, and it's largely fiction.</p>
+      <div className="article-image aspect-video">
+        <img 
+          src="https://images.unsplash.com/photo-1487611459768-bd414656ea10" 
+          alt="Old and new architecture side by side"
+        />
+      </div>
 
-            <p>Real technological change is messier, slower, and more institutional than the disruption narrative suggests. Most successful "disruptions" aren't about destroying existing systems—they're about finding ways to work within regulatory frameworks, supply chains, and customer expectations while gradually shifting them in new directions.</p>
+      <h2>Evolution, Not Revolution</h2>
 
-            <div className="aspect-video mb-8 rounded-lg overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" 
-                alt="Person coding on laptop"
-                className="w-full h-full object-cover"
-              />
-            </div>
+      <p>
+        Consider the rise of fintech. Companies like Stripe, Square, and Plaid didn't disrupt traditional financial infrastructure—they <strong>interfaced with it</strong>. They built elegant APIs on top of the same ACH rails, card networks, and banking regulations that incumbents use. The innovation was in the interface, not the underlying system.
+      </p>
 
-            <p>Consider the companies that actually transformed industries. Amazon didn't disrupt retail by ignoring logistics—they became the world's most sophisticated logistics company. Tesla didn't disrupt automotive by avoiding manufacturing—they reimagined what manufacturing could be. Netflix didn't disrupt entertainment by ignoring content—they became a content creation powerhouse.</p>
+      <p>
+        This pattern repeats across industries. Uber didn't invent ride-sharing—taxis existed. It created a better dispatch and payment system. Airbnb didn't invent short-term rentals—hotels and bed-and-breakfasts existed. It created a better discovery and booking platform. The "disruption" was really interface innovation.
+      </p>
 
-            <p>The disruption mythology is appealing because it suggests that technological superiority alone determines market outcomes. But technology is only one factor in complex institutional ecosystems. Regulatory approval, supply chain relationships, customer trust, talent networks—these matter as much as code quality or algorithm performance.</p>
+      <h2>The Institutional Layer</h2>
 
-            <p>This has important implications for founders and investors. The most defensible technology companies aren't those that ignore existing institutions—they're those that understand institutions well enough to build bridges between old and new systems. They create technological solutions that make existing stakeholders more powerful, not irrelevant.</p>
+      <p>
+        What the disruption narrative misses is the role of institutional change. New technologies don't succeed in a vacuum—they succeed when institutions are ready to adopt them. This readiness often depends on regulatory changes, cultural shifts, and economic pressures that have little to do with the technology itself.
+      </p>
 
-            <div className="aspect-video mb-8 rounded-lg overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3" 
-                alt="Traditional library meets modern"
-                className="w-full h-full object-cover"
-              />
-            </div>
+      <blockquote>
+        The most successful "disruptors" are those who understand that technological change and institutional change are deeply intertwined.
+      </blockquote>
 
-            <p>The mythology of disruption also obscures the role of timing and luck in technological change. Many "revolutionary" technologies have been available for decades before finding market success. The iPhone wasn't the first smartphone, Google wasn't the first search engine, Facebook wasn't the first social network. They succeeded because they arrived at the right institutional moment.</p>
+      <div className="article-image aspect-video">
+        <img 
+          src="https://images.unsplash.com/photo-1551434678-e076c223a692" 
+          alt="Modern building facade with traditional elements"
+        />
+      </div>
 
-            <p>Understanding this changes how we think about innovation strategy. Instead of asking "How can we disrupt this industry?" the better question is "How can we create technology that makes existing institutions more effective while opening new possibilities for the future?"</p>
-          </div>
-        </div>
-      </article>
-    </div>
+      <h2>Symbiosis Over Substitution</h2>
+
+      <p>
+        The reality is that most technological change happens through symbiosis, not substitution. New systems integrate with existing ones, creating hybrid arrangements that gradually shift power and capability. This is messier than the disruption narrative suggests, but it's how change actually happens.
+      </p>
+
+      <p>
+        Understanding this has practical implications. If you're building in a regulated industry, your success depends less on technical superiority than on institutional navigation. The question isn't whether your technology is better—it's whether institutions are ready to adopt it.
+      </p>
+
+      <p>
+        The mythology of disruption persists because it's useful for entrepreneurs seeking funding and investors seeking returns. But building successful companies requires understanding the mundane realities of institutional change, not just the heroic narratives of technological revolution.
+      </p>
+    </ArticleLayout>
   );
 };
 

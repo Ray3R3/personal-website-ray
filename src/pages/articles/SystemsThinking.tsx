@@ -1,86 +1,70 @@
-import { useEffect, useState } from 'react';
+import ArticleLayout from '../../components/ArticleLayout';
 
 const SystemsThinking = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      {/* Navigation */}
-      <nav className="absolute top-8 left-8 z-20">
-        <a 
-          href="/writing" 
-          className="text-muted-foreground hover:text-foreground font-light tracking-wide transition-colors duration-200"
-        >
-          ← Back to Writing
-        </a>
-      </nav>
+    <ArticleLayout
+      title="Systems Thinking and Emergent Behavior"
+      date="November 28, 2023"
+      excerpt="Why focusing on individual components misses the point entirely, and how understanding emergence helps predict everything from market crashes to cultural movements."
+      heroImage="https://images.unsplash.com/photo-1501594907352-04cda38ebc29"
+      heroAlt="Complex network patterns"
+    >
+      <p>
+        The most important phenomena in complex systems aren't designed—they emerge. Traffic jams, market crashes, viral content, cultural movements: these arise from the interaction of individual components following simple rules. No one plans them, yet they follow predictable patterns.
+      </p>
 
-      {/* Article Header */}
-      <section className="pt-32 pb-16 px-8">
-        <div className="max-w-4xl mx-auto">
-          <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <time className="text-sm text-muted-foreground font-light">
-              November 28, 2023
-            </time>
-            <h1 className="text-4xl md:text-6xl font-light tracking-tight text-foreground mt-4 mb-8 leading-tight">
-              Systems Thinking and Emergent Behavior
-            </h1>
-            <div className="aspect-video mb-12 rounded-lg overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29" 
-                alt="Complex network patterns"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <p>
+        This is the fundamental insight of systems thinking: the behavior of a system can't be understood by analyzing its parts in isolation. The interesting dynamics happen at the level of interaction, not at the level of individual agents. Focus on the relationships, not the objects.
+      </p>
 
-      {/* Article Content */}
-      <article className="px-8 pb-20">
-        <div className="max-w-3xl mx-auto prose prose-lg prose-invert">
-          <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <p className="text-xl text-muted-foreground mb-8 font-light leading-relaxed">
-              Why focusing on individual components misses the point entirely, and how understanding emergence helps predict everything from market crashes to cultural movements.
-            </p>
-            
-            <p>The most important phenomena in complex systems can't be understood by studying their parts in isolation. Traffic jams, market crashes, viral trends, organizational dysfunction—these emerge from the interactions between components, not from the components themselves.</p>
+      <div className="article-image aspect-video">
+        <img 
+          src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b" 
+          alt="Network visualization"
+        />
+      </div>
 
-            <p>Traditional reductionist thinking trains us to look for root causes and linear relationships. But complex systems operate on different principles. Small changes can cascade into massive effects. Feedback loops create self-reinforcing cycles. Emergence produces outcomes that no individual actor intended or predicted.</p>
+      <h2>Emergence in Markets</h2>
 
-            <div className="aspect-video mb-8 rounded-lg overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1518770660439-4636190af475" 
-                alt="Circuit board network"
-                className="w-full h-full object-cover"
-              />
-            </div>
+      <p>
+        Consider financial markets. Individual investors make rational decisions based on available information, yet markets regularly exhibit irrational behavior: bubbles, crashes, persistent inefficiencies. The mystery disappears when you realize that <strong>rationality at the individual level doesn't guarantee rationality at the system level</strong>.
+      </p>
 
-            <p>Consider how cultures change. It's not that a single idea suddenly convinces everyone to think differently. Instead, ideas spread through networks, interact with existing beliefs, get modified and amplified, until they reach tipping points where the entire system reorganizes around new patterns.</p>
+      <p>
+        Market dynamics emerge from the interaction between different types of participants with different time horizons, risk tolerances, and information sets. The behavior of the whole is qualitatively different from the behavior of the parts. Understanding this distinction is what separates successful allocators from unsuccessful ones.
+      </p>
 
-            <p>The same dynamics operate in markets, organizations, and technological systems. Understanding emergence means recognizing that the behavior of the whole is fundamentally different from the sum of its parts. You can't predict a stock market crash by analyzing individual companies, just as you can't predict cultural shifts by studying individual people.</p>
+      <h2>Cultural Phase Transitions</h2>
 
-            <p>This has profound implications for anyone trying to create change. Instead of focusing on controlling individual components, systems thinkers focus on understanding patterns, feedback loops, and leverage points—places where small changes can produce large effects throughout the system.</p>
+      <p>
+        The same principles apply to cultural change. Ideas don't spread linearly—they reach tipping points where small changes in adoption create massive shifts in behavior. Understanding these phase transitions helps predict which trends will scale and which will fizzle.
+      </p>
 
-            <div className="aspect-video mb-8 rounded-lg overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9" 
-                alt="Forest ecosystem"
-                className="w-full h-full object-cover"
-              />
-            </div>
+      <blockquote>
+        The most powerful interventions in complex systems are often the smallest ones applied at the right leverage points.
+      </blockquote>
 
-            <p>The challenge is that our institutions—governments, corporations, educational systems—are designed around reductionist thinking. They optimize for predictability and control, but complex systems are inherently unpredictable and uncontrollable. The solution isn't more control—it's better adaptation.</p>
+      <div className="article-image aspect-video">
+        <img 
+          src="https://images.unsplash.com/photo-1519452575417-564c1401ecc0" 
+          alt="Complex geometric patterns"
+        />
+      </div>
 
-            <p>Systems thinking is ultimately about humility. It's about recognizing that we're part of systems larger than ourselves, that our actions have consequences we can't foresee, and that the most important changes often happen through emergence rather than intention.</p>
-          </div>
-        </div>
-      </article>
-    </div>
+      <h2>Leverage Points and Feedback Loops</h2>
+
+      <p>
+        Systems thinking reveals that the most effective interventions often target feedback loops rather than individual events. Instead of treating symptoms, focus on the structures that generate the symptoms. Instead of pushing harder, find the leverage points where small changes create large effects.
+      </p>
+
+      <p>
+        This applies to everything from organizational change to technology adoption to social movements. The question isn't how to force a particular outcome—it's how to shift the underlying dynamics that generate outcomes.
+      </p>
+
+      <p>
+        Understanding emergence doesn't eliminate uncertainty, but it does provide better frameworks for navigating complex environments. When you can't predict specific events, you can at least understand the patterns that generate them.
+      </p>
+    </ArticleLayout>
   );
 };
 
