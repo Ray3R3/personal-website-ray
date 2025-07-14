@@ -129,12 +129,12 @@ const Index = () => {
         <section className={`mb-24 transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="flex items-center gap-4 mb-10">
             <div className="w-3 h-3 rounded-full bg-orange-500"></div>
-            <h2 className="text-3xl font-light tracking-wide text-foreground">finding, funding and building</h2>
+            <h2 className="text-3xl font-light tracking-wide text-foreground">interested in</h2>
             <div className="flex-1 h-px bg-gradient-to-r from-orange-500/50 to-transparent"></div>
           </div>
           <SectionCard accent="orange">
             <p className="text-muted-foreground mb-10 text-lg leading-relaxed">
-              I look for exceptional people building in domains where capital intensity, technological risk, and regulatory complexity create natural barriers. These aren't bugs—they're features that keep competition away:
+              I'm interested in domains where capital intensity, technological risk, and regulatory complexity create natural barriers. These aren't bugs—they're features that keep competition away:
             </p>
             
             <div className="space-y-10 text-muted-foreground">
@@ -227,7 +227,7 @@ const Index = () => {
             <p className="text-muted-foreground leading-relaxed text-lg font-light">
               Cambridge dropout. Credit Suisse Scholar. Created my own interdisciplinary degree combining law, art history, philosophy and science. Started a company at 19, convinced some professors to fund it, then left university to build it properly. 
               <br /><br />
-              Learned that regulatory restrictions kill companies faster than bad product-market fit. Now I help exceptional individuals navigate the machinery that constrains European innovation—or build around it entirely.
+              Learned that regulatory restrictions kill companies faster than bad product-market fit. Now I'm focused on growing the UK's startup ecosystem—building the infrastructure and networks that turn exceptional ideas into category-defining companies.
             </p>
           </SectionCard>
         </section>
