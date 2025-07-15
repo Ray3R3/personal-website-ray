@@ -43,11 +43,11 @@ const mockArticles = [
   },
   {
     id: 6,
-    title: "The Mythology of Disruption",
-    date: "October 15, 2023",
-    excerpt: "How Silicon Valley's favorite narrative obscures the real mechanisms of technological change—and why most 'disruption' is actually institutional evolution.",
-    slug: "mythology-of-disruption",
-    category: "technology"
+    title: "Great Britain? Mediocre Ambition",
+    date: "January 15, 2025",
+    excerpt: "Or how the UK became a nation of dropshippers while the US ships rockets—and why cultural blindness creates the arbitrage opportunity of our lifetime.",
+    slug: "great-britain-mediocre-ambition",
+    category: "general"
   },
 ];
 
