@@ -6,8 +6,8 @@ const GreatBritainMediocreAmbition = () => {
       title="Great Britain? Mediocre Ambition"
       date="January 15, 2025"
       excerpt="Or how the UK became a nation of dropshippers while the US ships rockets"
-      heroImage="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-      heroAlt="British flag against moody sky"
+      heroImage="/lovable-uploads/f1516fe3-3b43-4b75-93be-427416471337.png"
+      heroAlt="Combined American and British flags"
     >
       <p>
         Last week, I attended two launch parties. The first, in Shoreditch, celebrated a new sustainable streetwear brand. Organic cotton. Ethical supply chains. A logo that looked suspiciously like Supreme's, but in Helvetica. The second, via Zoom from San Francisco, an American friend announces $5 million in seed funding for his hardware startup. He's 23.
@@ -108,6 +108,32 @@ const GreatBritainMediocreAmbition = () => {
       <p className="text-right italic mt-8">
         - Ray
       </p>
+
+      {/* Footnotes */}
+      <div className="mt-16 pt-8 border-t border-border">
+        <h3 className="text-lg font-light mb-6 text-muted-foreground">References</h3>
+        <div className="text-sm text-muted-foreground space-y-2 leading-relaxed">
+          <p>¹ Companies House, "Companies register activities April 2023 to March 2024", GOV.UK, July 2024</p>
+          <p>² Companies House Statistical Release 2024. Fashion/retail based on SIC code 47910</p>
+          <p>³ Tech Nation, "UK Tech in the Age of AI Report 2024"</p>
+          <p>⁴ British Private Equity & Venture Capital Association (BVCA), "Venture Capital in the UK 2025"</p>
+          <p>⁵ Dealroom/City AM, "UK tech secures third of European venture funding in H1 2024"</p>
+          <p>⁶ PitchBook-NVCA Venture Monitor, Q4 2024. US deployment: $209 billion</p>
+          <p>⁷ PrepLounge, "Consulting Salaries in the United Kingdom 2025"</p>
+          <p>⁸ Management Consulted, "2024 Consulting Salaries"</p>
+          <p>⁹ Big Four Transparency Reports 2024</p>
+          <p>¹⁰ Glassdoor/Indeed salary data, 2024</p>
+          <p>¹¹ ONS, "Long-term international migration, provisional: year ending December 2024"</p>
+          <p>¹² Institute for Fiscal Studies, "How have graduate earnings changed over time?", 2024</p>
+          <p>¹³ HESA Graduate Outcomes data 2021/22. Creative arts median: £20,000</p>
+          <p>¹⁴ Hurun UK Unicorns 2024 Report: 53; Beauhurst: 41</p>
+          <p>¹⁵ Beauhurst, "The Full List of UK Unicorn Companies", 2025</p>
+          <p>¹⁶ Sifted, "The 10 fastest fintechs to reach billion dollar valuations", 2024</p>
+          <p>¹⁷ Hurun UK Unicorns 2024. Fintech: 17, Enterprise software: 17</p>
+          <p>¹⁸ ONS, UK GDP by sector 2024. Manufacturing: 8.0% of GVA</p>
+          <p>¹⁹ Tech Nation Report 2024. AI captured 16% of Q1 2024 UK venture investment</p>
+        </div>
+      </div>
     </ArticleLayout>
   );
 };
